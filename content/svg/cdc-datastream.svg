@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380" role="img" aria-label="Chemins d'une réplication CDC avec Datastream">
+  <!-- Source -->
+  <rect class="flow-box" x="8" y="140" width="160" height="56"/>
+  <text class="flow-label" x="88" y="163" text-anchor="middle">Base source</text>
+  <text class="edge-text" x="88" y="183">binlog, WAL, redo</text>
+
+  <!-- Source → Datastream -->
+  <path class="flow-line" d="M168 168 H264"/>
+  <polygon class="flow-arrow" points="264,164 270,168 264,172"/>
+  <rect class="edge-chip" x="174" y="176" width="90" height="18"/>
+  <text class="edge-text" x="219" y="189">backfill + CDC</text>
+
+  <!-- Datastream -->
+  <rect class="flow-box q" x="270" y="140" width="150" height="56"/>
+  <text class="flow-label q-label" x="345" y="163" text-anchor="middle">Datastream</text>
+  <text class="edge-text" x="345" y="183">flux serverless</text>
+
+  <!-- Trois destinations -->
+  <path class="flow-line" d="M420 168 H460 M460 50 V270 M460 50 H584 M460 168 H584 M460 270 H584"/>
+  <polygon class="flow-arrow" points="584,46 590,50 584,54"/>
+  <polygon class="flow-arrow" points="584,164 590,168 584,172"/>
+  <polygon class="flow-arrow" points="584,266 590,270 584,274"/>
+  <rect class="edge-chip" x="470" y="29" width="108" height="18"/>
+  <text class="edge-text" x="524" y="42">fusion ou ajout</text>
+  <rect class="edge-chip" x="487" y="147" width="74" height="18"/>
+  <text class="edge-text" x="524" y="160">ajout seul</text>
+  <rect class="edge-chip" x="480" y="249" width="88" height="18"/>
+  <text class="edge-text" x="524" y="262">Avro ou JSON</text>
+
+  <rect class="flow-box leaf" x="590" y="30" width="170" height="40"/>
+  <text class="flow-label leaf-label" x="675" y="55" text-anchor="middle">BigQuery</text>
+  <rect class="flow-box leaf" x="590" y="148" width="170" height="40"/>
+  <text class="flow-label leaf-label" x="675" y="173" text-anchor="middle">Tables Iceberg</text>
+  <rect class="flow-box" x="590" y="250" width="170" height="40"/>
+  <text class="flow-label" x="675" y="274" text-anchor="middle">Cloud Storage</text>
+
+  <!-- Cloud Storage → Dataflow → autres bases -->
+  <path class="flow-line" d="M675 290 V320"/>
+  <polygon class="flow-arrow" points="671,320 679,320 675,326"/>
+  <rect class="edge-chip" x="604" y="297" width="142" height="18"/>
+  <text class="edge-text" x="675" y="310">notification Pub/Sub</text>
+  <rect class="flow-box" x="590" y="326" width="170" height="40"/>
+  <text class="flow-label" x="675" y="350" text-anchor="middle">Modèle Dataflow</text>
+
+  <path class="flow-line" d="M590 346 H536"/>
+  <polygon class="flow-arrow" points="536,342 530,346 536,350"/>
+  <rect class="flow-box leaf" x="250" y="326" width="280" height="40"/>
+  <text class="flow-label leaf-label" x="390" y="351" text-anchor="middle">Spanner, Cloud SQL, BigQuery</text>
+</svg>

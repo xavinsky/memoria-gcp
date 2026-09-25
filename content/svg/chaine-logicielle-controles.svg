@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 296" role="img" aria-label="Contrôles de sécurité le long de la chaîne logicielle : source, dépendances, build, registre, déploiement, exécution, avec les secrets et les identités en transverse">
+  <!-- Liaisons entre étapes -->
+  <path class="flow-line" d="M142 40 H159 M291 40 H308 M440 40 H457 M589 40 H606 M738 40 H755"/>
+  <!-- Liaisons étape → contrôles -->
+  <path class="flow-line" d="M76 64 V94 M225 64 V94 M374 64 V94 M523 64 V94 M672 64 V94 M821 64 V94"/>
+
+  <!-- Flèches -->
+  <polygon class="flow-arrow" points="153,36 153,44 159,40"/>
+  <polygon class="flow-arrow" points="302,36 302,44 308,40"/>
+  <polygon class="flow-arrow" points="451,36 451,44 457,40"/>
+  <polygon class="flow-arrow" points="600,36 600,44 606,40"/>
+  <polygon class="flow-arrow" points="749,36 749,44 755,40"/>
+  <polygon class="flow-arrow" points="72,94 80,94 76,100"/>
+  <polygon class="flow-arrow" points="221,94 229,94 225,100"/>
+  <polygon class="flow-arrow" points="370,94 378,94 374,100"/>
+  <polygon class="flow-arrow" points="519,94 527,94 523,100"/>
+  <polygon class="flow-arrow" points="668,94 676,94 672,100"/>
+  <polygon class="flow-arrow" points="817,94 825,94 821,100"/>
+
+  <!-- Étapes -->
+  <rect class="flow-box q" x="10" y="16" width="132" height="48"/>
+  <text class="flow-label q-label" x="76" y="37" text-anchor="middle">Source</text>
+  <text class="edge-text" x="76" y="54">GitHub, GitLab, SSM</text>
+
+  <rect class="flow-box q" x="159" y="16" width="132" height="48"/>
+  <text class="flow-label q-label" x="225" y="37" text-anchor="middle">Dépendances</text>
+  <text class="edge-text" x="225" y="54">paquets, images</text>
+
+  <rect class="flow-box q" x="308" y="16" width="132" height="48"/>
+  <text class="flow-label q-label" x="374" y="37" text-anchor="middle">Build</text>
+  <text class="edge-text" x="374" y="54">Cloud Build</text>
+
+  <rect class="flow-box q" x="457" y="16" width="132" height="48"/>
+  <text class="flow-label q-label" x="523" y="37" text-anchor="middle">Registre</text>
+  <text class="edge-text" x="523" y="54">Artifact Registry</text>
+
+  <rect class="flow-box q" x="606" y="16" width="132" height="48"/>
+  <text class="flow-label q-label" x="672" y="37" text-anchor="middle">Déploiement</text>
+  <text class="edge-text" x="672" y="54">admission</text>
+
+  <rect class="flow-box q" x="755" y="16" width="132" height="48"/>
+  <text class="flow-label q-label" x="821" y="37" text-anchor="middle">Exécution</text>
+  <text class="edge-text" x="821" y="54">Cloud Run, GKE</text>
+
+  <!-- Contrôles -->
+  <rect class="flow-box" x="10" y="100" width="132" height="120"/>
+  <text class="edge-text" x="76" y="124">branches protégées</text>
+  <text class="edge-text" x="76" y="148">revue obligatoire</text>
+  <text class="edge-text" x="76" y="172">commentaire /gcbrun</text>
+  <text class="edge-text" x="76" y="196">compte robot</text>
+
+  <rect class="flow-box" x="159" y="100" width="132" height="120"/>
+  <text class="edge-text" x="225" y="124">dépôt distant</text>
+  <text class="edge-text" x="225" y="148">dépôt virtuel</text>
+  <text class="edge-text" x="225" y="172">Assured OSS</text>
+  <text class="edge-text" x="225" y="196">versions figées</text>
+
+  <rect class="flow-box" x="308" y="100" width="132" height="120"/>
+  <text class="edge-text" x="374" y="124">compte de service</text>
+  <text class="edge-text" x="374" y="148">pool privé</text>
+  <text class="edge-text" x="374" y="172">availableSecrets</text>
+  <text class="edge-text" x="374" y="196">provenance SLSA 3</text>
+
+  <rect class="flow-box" x="457" y="100" width="132" height="120"/>
+  <text class="edge-text" x="523" y="124">analyse continue</text>
+  <text class="edge-text" x="523" y="148">On-Demand Scanning</text>
+  <text class="edge-text" x="523" y="172">SBOM, VEX</text>
+  <text class="edge-text" x="523" y="196">digest immuable</text>
+
+  <rect class="flow-box" x="606" y="100" width="132" height="120"/>
+  <text class="edge-text" x="672" y="124">Binary Authorization</text>
+  <text class="edge-text" x="672" y="148">attestor du build</text>
+  <text class="edge-text" x="672" y="172">dry-run d'abord</text>
+  <text class="edge-text" x="672" y="196">approbation</text>
+
+  <rect class="flow-box" x="755" y="100" width="132" height="120"/>
+  <text class="edge-text" x="821" y="124">validation continue</text>
+  <text class="edge-text" x="821" y="148">secrets montés</text>
+  <text class="edge-text" x="821" y="172">SA d'exécution</text>
+  <text class="edge-text" x="821" y="196">journaux d'audit</text>
+
+  <!-- Transverse -->
+  <rect class="flow-box leaf" x="10" y="240" width="877" height="44"/>
+  <text class="flow-label leaf-label" x="448" y="267" text-anchor="middle">Transverse : Secret Manager, Workload Identity Federation, IAM au moindre privilège</text>
+</svg>

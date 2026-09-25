@@ -1,0 +1,67 @@
+# Menu principal : ordre des onglets et, pour chaque onglet, ses groupes (= sous-dossiers de
+# content/<key>/) dans l'ordre d'affichage du menu latéral.
+# type : sections (défaut, contenu Markdown), lexique, generateurs.
+
+title: Memoria GCP
+
+pages:
+  - key: architectures-data
+    label: Architectures Data
+    groups:
+      stockage: Stockage & bases de données
+      patterns: Patterns
+
+  - key: architectures-ia
+    label: Architectures IA
+    groups:
+      ml: Machine Learning
+      genai: IA générative
+      agents: Agents
+
+  - key: devops
+    label: DevOps
+    groups:
+      cicd: Chaîne CI/CD
+      depots: Dépôts & intégrations
+      outils-tiers: Intégrations outils tiers
+      iac: Infrastructure as Code
+      data-ia: CI/CD data & IA
+      poste: Poste de développement
+
+  - key: plateforme
+    label: Plateforme
+    groups:
+      infrastructure: Infrastructure
+      iam-securite: IAM & Sécurité
+      exploitation: Exploitation
+
+  - key: syntaxes
+    label: Syntaxes
+    groups:
+      cli: CLI
+      sql: SQL
+      code: Code
+
+  - key: apis
+    label: APIs & SDK
+    groups:
+      clients: Bibliothèques clientes
+      ml: APIs ML
+
+  - key: produits
+    label: Produits
+    groups:
+      data: Data
+      ia: IA
+      devops: DevOps
+      plateforme: Plateforme
+      autres: Autres
+
+  - key: lexique
+    label: Lexique
+    type: lexique
+
+  - key: refs
+    label: Refs
+    groups:
+      docs: Documentation officielle

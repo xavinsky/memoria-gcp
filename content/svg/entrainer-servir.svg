@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 270" role="img" aria-label="Architecture de référence : données et image vers un job d'entraînement, Model Registry, puis endpoint en ligne ou inférence par lots">
+  <!-- Liaisons -->
+  <path class="flow-line" d="M170 68 H200 V128 H230 M170 208 H200 V148 H230"/>
+  <path class="flow-line" d="M310 110 V76"/>
+  <path class="flow-line" d="M390 138 H450"/>
+  <path class="flow-line" d="M590 138 H615 V48 H640 M615 138 V228 H640"/>
+  <path class="flow-line" d="M715 100 V76"/>
+
+  <!-- Pastilles -->
+  <rect class="edge-chip" x="250" y="84" width="120" height="18"/>
+  <text class="edge-text" x="310" y="97">autolog, métriques</text>
+  <rect class="edge-chip" x="394" y="129" width="52" height="18"/>
+  <text class="edge-text" x="420" y="142">import</text>
+  <rect class="edge-chip" x="585" y="80" width="60" height="18"/>
+  <text class="edge-text" x="615" y="93">déployer</text>
+  <rect class="edge-chip" x="590" y="176" width="50" height="18"/>
+  <text class="edge-text" x="615" y="189">lots</text>
+
+  <!-- Flèches -->
+  <polygon class="flow-arrow" points="224,124 224,132 230,128"/>
+  <polygon class="flow-arrow" points="224,144 224,152 230,148"/>
+  <polygon class="flow-arrow" points="306,82 314,82 310,76"/>
+  <polygon class="flow-arrow" points="444,134 444,142 450,138"/>
+  <polygon class="flow-arrow" points="634,44 634,52 640,48"/>
+  <polygon class="flow-arrow" points="634,224 634,232 640,228"/>
+  <polygon class="flow-arrow" points="711,82 719,82 715,76"/>
+
+  <!-- Nœuds -->
+  <rect class="flow-box" x="10" y="40" width="160" height="56"/>
+  <text class="flow-label" x="90" y="64" text-anchor="middle">BigQuery, Storage</text>
+  <text class="edge-text" x="90" y="82">jeu d'entraînement</text>
+
+  <rect class="flow-box" x="10" y="180" width="160" height="56"/>
+  <text class="flow-label" x="90" y="204" text-anchor="middle">Artifact Registry</text>
+  <text class="edge-text" x="90" y="222">image d'entraînement</text>
+
+  <rect class="flow-box" x="230" y="20" width="160" height="56"/>
+  <text class="flow-label" x="310" y="44" text-anchor="middle">Experiments</text>
+  <text class="edge-text" x="310" y="62">runs comparés</text>
+
+  <rect class="flow-box q" x="230" y="110" width="160" height="56"/>
+  <text class="flow-label q-label" x="310" y="134" text-anchor="middle">Job d'entraînement</text>
+  <text class="edge-text" x="310" y="152">CPU, GPU, TPU · Spot</text>
+
+  <rect class="flow-box q" x="450" y="110" width="140" height="56"/>
+  <text class="flow-label q-label" x="520" y="134" text-anchor="middle">Model Registry</text>
+  <text class="edge-text" x="520" y="152">versions, alias</text>
+
+  <rect class="flow-box leaf" x="640" y="20" width="150" height="56"/>
+  <text class="flow-label leaf-label" x="715" y="44" text-anchor="middle">Endpoint</text>
+  <text class="edge-text" x="715" y="63">en ligne, autoscaling</text>
+
+  <rect class="flow-box" x="640" y="100" width="150" height="48"/>
+  <text class="flow-label" x="715" y="121" text-anchor="middle">Application</text>
+  <text class="edge-text" x="715" y="138">REST ou gRPC</text>
+
+  <rect class="flow-box leaf" x="640" y="200" width="150" height="56"/>
+  <text class="flow-label leaf-label" x="715" y="224" text-anchor="middle">Inférence par lots</text>
+  <text class="edge-text" x="715" y="243">vers BigQuery ou GCS</text>
+</svg>

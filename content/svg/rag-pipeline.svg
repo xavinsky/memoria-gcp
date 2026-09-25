@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 262" role="img" aria-label="Chaîne RAG de référence : indexation des documents (extraction, découpage, embeddings, index), puis à chaque question récupération, reclassement et génération avec citations">
+  <!-- Titres des deux chaînes -->
+  <text class="flow-label" x="10" y="18">Indexation : à l'import, puis à chaque mise à jour des sources</text>
+  <text class="flow-label" x="10" y="158">Interrogation : à chaque question</text>
+
+  <!-- Liaisons, indexation -->
+  <path class="flow-line" d="M150 58 H164 M310 58 H324 M470 58 H484 M630 58 H644"/>
+  <polygon class="flow-arrow" points="164,54 164,62 170,58"/>
+  <polygon class="flow-arrow" points="324,54 324,62 330,58"/>
+  <polygon class="flow-arrow" points="484,54 484,62 490,58"/>
+  <polygon class="flow-arrow" points="644,54 644,62 650,58"/>
+
+  <!-- Liaisons, interrogation -->
+  <path class="flow-line" d="M150 198 H164 M310 198 H324 M470 198 H484 M630 198 H644"/>
+  <polygon class="flow-arrow" points="164,194 164,202 170,198"/>
+  <polygon class="flow-arrow" points="324,194 324,202 330,198"/>
+  <polygon class="flow-arrow" points="484,194 484,202 490,198"/>
+  <polygon class="flow-arrow" points="644,194 644,202 650,198"/>
+
+  <!-- Index vers récupération -->
+  <path class="flow-line" d="M720 86 V120 H400 V164"/>
+  <polygon class="flow-arrow" points="396,164 404,164 400,170"/>
+  <rect class="edge-chip" x="476" y="111" width="168" height="18"/>
+  <text class="edge-text" x="560" y="124">k plus proches voisins</text>
+
+  <!-- Question vers génération : la question accompagne le contexte -->
+  <path class="flow-line" d="M80 226 V246 H720 V232"/>
+  <polygon class="flow-arrow" points="716,232 724,232 720,226"/>
+  <rect class="edge-chip" x="330" y="237" width="140" height="18"/>
+  <text class="edge-text" x="400" y="250">question + fragments</text>
+
+  <!-- Nœuds, indexation -->
+  <rect class="flow-box" x="10" y="30" width="140" height="56"/>
+  <text class="flow-label" x="80" y="54" text-anchor="middle">Sources</text>
+  <text class="edge-text" x="80" y="72">GCS, BigQuery, SaaS</text>
+
+  <rect class="flow-box" x="170" y="30" width="140" height="56"/>
+  <text class="flow-label" x="240" y="54" text-anchor="middle">Extraction</text>
+  <text class="edge-text" x="240" y="72">texte, OCR, tableaux</text>
+
+  <rect class="flow-box" x="330" y="30" width="140" height="56"/>
+  <text class="flow-label" x="400" y="54" text-anchor="middle">Découpage</text>
+  <text class="edge-text" x="400" y="72">texte + métadonnées</text>
+
+  <rect class="flow-box" x="490" y="30" width="140" height="56"/>
+  <text class="flow-label" x="560" y="54" text-anchor="middle">Embeddings</text>
+  <text class="edge-text" x="560" y="72">RETRIEVAL_DOCUMENT</text>
+
+  <rect class="flow-box q" x="650" y="30" width="140" height="56"/>
+  <text class="flow-label q-label" x="720" y="54" text-anchor="middle">Index</text>
+  <text class="edge-text" x="720" y="72">vecteurs, mots, ACL</text>
+
+  <!-- Nœuds, interrogation -->
+  <rect class="flow-box" x="10" y="170" width="140" height="56"/>
+  <text class="flow-label" x="80" y="194" text-anchor="middle">Question</text>
+  <text class="edge-text" x="80" y="212">utilisateur, agent</text>
+
+  <rect class="flow-box" x="170" y="170" width="140" height="56"/>
+  <text class="flow-label" x="240" y="194" text-anchor="middle">Embedding</text>
+  <text class="edge-text" x="240" y="212">RETRIEVAL_QUERY</text>
+
+  <rect class="flow-box q" x="330" y="170" width="140" height="56"/>
+  <text class="flow-label q-label" x="400" y="194" text-anchor="middle">Récupération</text>
+  <text class="edge-text" x="400" y="212">top 50, filtres</text>
+
+  <rect class="flow-box" x="490" y="170" width="140" height="56"/>
+  <text class="flow-label" x="560" y="194" text-anchor="middle">Reclassement</text>
+  <text class="edge-text" x="560" y="212">ranking API, top 5</text>
+
+  <rect class="flow-box leaf" x="650" y="170" width="140" height="56"/>
+  <text class="flow-label leaf-label" x="720" y="194" text-anchor="middle">Génération</text>
+  <text class="edge-text" x="720" y="212">Gemini, citations</text>
+</svg>

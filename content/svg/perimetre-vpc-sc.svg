@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 330" role="img" aria-label="Périmètre de service VPC Service Controls : accès libre à l'intérieur, entrée et sortie par règles explicites, refus par défaut en travers de la frontière">
+  <!-- Périmètre -->
+  <rect class="arch-zone" x="290" y="40" width="220" height="276"/>
+  <text class="arch-zone-label" x="302" y="60">Périmètre de service</text>
+  <text class="edge-text" x="85" y="30">hors périmètre</text>
+  <text class="edge-text" x="715" y="30">hors périmètre</text>
+
+  <!-- Liaisons -->
+  <path class="flow-line" d="M160 101 H330"/>
+  <path class="flow-line" d="M160 187 H290 M290 175 V199"/>
+  <path class="flow-line" d="M160 273 H330"/>
+  <path class="flow-line" d="M470 101 H640 M510 89 V113"/>
+  <path class="flow-line" d="M470 187 H640"/>
+  <path class="flow-line" d="M400 250 V210"/>
+
+  <!-- Pastilles -->
+  <rect class="edge-chip" x="175" y="92" width="100" height="18"/>
+  <text class="edge-text" x="225" y="105">règle d'entrée</text>
+  <rect class="edge-chip" x="197" y="178" width="56" height="18"/>
+  <text class="edge-text" x="225" y="191">refusé</text>
+  <rect class="edge-chip" x="183" y="264" width="84" height="18"/>
+  <text class="edge-text" x="225" y="277">accès privé</text>
+  <rect class="edge-chip" x="547" y="92" width="56" height="18"/>
+  <text class="edge-text" x="575" y="105">refusé</text>
+  <rect class="edge-chip" x="522" y="178" width="106" height="18"/>
+  <text class="edge-text" x="575" y="191">règle de sortie</text>
+  <rect class="edge-chip" x="376" y="221" width="48" height="18"/>
+  <text class="edge-text" x="400" y="234">libre</text>
+
+  <!-- Flèches -->
+  <polygon class="flow-arrow" points="324,97 324,105 330,101"/>
+  <polygon class="flow-arrow" points="324,269 324,277 330,273"/>
+  <polygon class="flow-arrow" points="634,183 634,191 640,187"/>
+  <polygon class="flow-arrow" points="396,216 404,216 400,210"/>
+
+  <!-- Hors périmètre, à gauche -->
+  <rect class="flow-box" x="10" y="78" width="150" height="46"/>
+  <text class="flow-label" x="85" y="98" text-anchor="middle">Poste d'admin</text>
+  <text class="edge-text" x="85" y="114">IP ou appareil connu</text>
+
+  <rect class="flow-box" x="10" y="164" width="150" height="46"/>
+  <text class="flow-label" x="85" y="184" text-anchor="middle">Identifiant volé</text>
+  <text class="edge-text" x="85" y="200">réseau inconnu</text>
+
+  <rect class="flow-box" x="10" y="250" width="150" height="46"/>
+  <text class="flow-label" x="85" y="270" text-anchor="middle">Réseau sur site</text>
+  <text class="edge-text" x="85" y="286">VPN, Interconnect</text>
+
+  <!-- Dans le périmètre -->
+  <rect class="flow-box leaf" x="330" y="78" width="140" height="46"/>
+  <text class="flow-label leaf-label" x="400" y="98" text-anchor="middle">BigQuery</text>
+  <text class="edge-text" x="400" y="114">service restreint</text>
+
+  <rect class="flow-box leaf" x="330" y="164" width="140" height="46"/>
+  <text class="flow-label leaf-label" x="400" y="184" text-anchor="middle">Cloud Storage</text>
+  <text class="edge-text" x="400" y="200">service restreint</text>
+
+  <rect class="flow-box q" x="330" y="250" width="140" height="46"/>
+  <text class="flow-label q-label" x="400" y="270" text-anchor="middle">Réseau VPC</text>
+  <text class="edge-text" x="400" y="286">VIP restreinte</text>
+
+  <!-- Hors périmètre, à droite -->
+  <rect class="flow-box" x="640" y="78" width="150" height="46"/>
+  <text class="flow-label" x="715" y="98" text-anchor="middle">Bucket public</text>
+  <text class="edge-text" x="715" y="114">autre organisation</text>
+
+  <rect class="flow-box" x="640" y="164" width="150" height="46"/>
+  <text class="flow-label" x="715" y="184" text-anchor="middle">Projet partenaire</text>
+  <text class="edge-text" x="715" y="200">bucket d'échange</text>
+</svg>

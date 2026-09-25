@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 316" role="img" aria-label="Routage des notifications : Error Reporting et Cloud Monitoring vers les canaux natifs (messagerie, astreinte), Cloud Monitoring, Cloud Build et Cloud Deploy vers Pub/Sub, puis une fonction Cloud Run qui lit ses jetons dans Secret Manager et écrit dans Jira, Slack ou Teams">
+  <!-- Liaisons -->
+  <path class="flow-line" d="M160 44 H230"/>
+  <path class="flow-line" d="M160 124 H195 V72 H230 M195 124 V190 H230"/>
+  <path class="flow-line" d="M160 204 H230"/>
+  <path class="flow-line" d="M160 274 H212 V226 H230"/>
+  <path class="flow-line" d="M400 58 H520 M520 34 V96 M520 34 H650 M520 96 H650"/>
+  <path class="flow-line" d="M380 90 V133 H545 V176"/>
+  <path class="flow-line" d="M400 208 H470"/>
+  <path class="flow-line" d="M620 208 H630 M630 184 V249 M630 184 H650 M630 249 H650"/>
+  <path class="flow-line" d="M545 266 V240"/>
+
+  <!-- Pastilles -->
+  <rect class="edge-chip" x="432" y="49" width="56" height="18"/>
+  <text class="edge-text" x="460" y="62">natif</text>
+  <rect class="edge-chip" x="430" y="124" width="64" height="18"/>
+  <text class="edge-text" x="462" y="137">webhook</text>
+  <rect class="edge-chip" x="403" y="199" width="64" height="18"/>
+  <text class="edge-text" x="435" y="212">Eventarc</text>
+
+  <!-- Flèches -->
+  <polygon class="flow-arrow" points="224,40 224,48 230,44"/>
+  <polygon class="flow-arrow" points="224,68 224,76 230,72"/>
+  <polygon class="flow-arrow" points="224,186 224,194 230,190"/>
+  <polygon class="flow-arrow" points="224,200 224,208 230,204"/>
+  <polygon class="flow-arrow" points="224,222 224,230 230,226"/>
+  <polygon class="flow-arrow" points="644,30 644,38 650,34"/>
+  <polygon class="flow-arrow" points="644,92 644,100 650,96"/>
+  <polygon class="flow-arrow" points="541,170 549,170 545,176"/>
+  <polygon class="flow-arrow" points="464,204 464,212 470,208"/>
+  <polygon class="flow-arrow" points="644,180 644,188 650,184"/>
+  <polygon class="flow-arrow" points="644,245 644,253 650,249"/>
+  <polygon class="flow-arrow" points="541,246 549,246 545,240"/>
+
+  <!-- Sources -->
+  <rect class="flow-box" x="10" y="20" width="150" height="48"/>
+  <text class="flow-label" x="85" y="41" text-anchor="middle">Error Reporting</text>
+  <text class="edge-text" x="85" y="58">nouvelle erreur</text>
+
+  <rect class="flow-box" x="10" y="100" width="150" height="48"/>
+  <text class="flow-label" x="85" y="121" text-anchor="middle">Cloud Monitoring</text>
+  <text class="edge-text" x="85" y="138">règles d'alerte</text>
+
+  <rect class="flow-box" x="10" y="180" width="150" height="48"/>
+  <text class="flow-label" x="85" y="201" text-anchor="middle">Cloud Build</text>
+  <text class="edge-text" x="85" y="218">état des builds</text>
+
+  <rect class="flow-box" x="10" y="250" width="150" height="48"/>
+  <text class="flow-label" x="85" y="271" text-anchor="middle">Cloud Deploy</text>
+  <text class="edge-text" x="85" y="288">rollouts, approbations</text>
+
+  <!-- Transport -->
+  <rect class="flow-box" x="230" y="26" width="170" height="64"/>
+  <text class="flow-label" x="315" y="53" text-anchor="middle">Canaux</text>
+  <text class="edge-text" x="315" y="71">de notification</text>
+
+  <rect class="flow-box" x="230" y="176" width="170" height="64"/>
+  <text class="flow-label" x="315" y="203" text-anchor="middle">Pub/Sub</text>
+  <text class="edge-text" x="315" y="221">un sujet par source</text>
+
+  <rect class="flow-box q" x="470" y="176" width="150" height="64"/>
+  <text class="flow-label q-label" x="545" y="203" text-anchor="middle">Fonction Cloud Run</text>
+  <text class="edge-text" x="545" y="221">filtre, dédoublonne</text>
+
+  <rect class="flow-box" x="470" y="266" width="150" height="44"/>
+  <text class="flow-label" x="545" y="285" text-anchor="middle">Secret Manager</text>
+  <text class="edge-text" x="545" y="301">jetons Jira, Slack</text>
+
+  <!-- Destinations -->
+  <rect class="flow-box leaf" x="650" y="10" width="140" height="48"/>
+  <text class="flow-label leaf-label" x="720" y="31" text-anchor="middle">Messagerie</text>
+  <text class="edge-text" x="720" y="48">Slack, Chat, e-mail</text>
+
+  <rect class="flow-box leaf" x="650" y="72" width="140" height="48"/>
+  <text class="flow-label leaf-label" x="720" y="93" text-anchor="middle">Astreinte</text>
+  <text class="edge-text" x="720" y="110">PagerDuty, JSM</text>
+
+  <rect class="flow-box leaf" x="650" y="160" width="140" height="48"/>
+  <text class="flow-label leaf-label" x="720" y="181" text-anchor="middle">Jira</text>
+  <text class="edge-text" x="720" y="198">tickets, suivi</text>
+
+  <rect class="flow-box leaf" x="650" y="225" width="140" height="48"/>
+  <text class="flow-label leaf-label" x="720" y="246" text-anchor="middle">Slack, Teams</text>
+  <text class="edge-text" x="720" y="263">messages enrichis</text>
+</svg>

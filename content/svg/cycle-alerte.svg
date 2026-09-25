@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 272" role="img" aria-label="Cycle de vie d'une alerte : la règle ouvre une alerte qui notifie l'astreinte ou crée un ticket, l'alerte est acquittée puis fermée, un postmortem suit si ses critères sont atteints et ses actions corrigent les règles">
+  <!-- Liaisons -->
+  <path class="flow-line" d="M170 58 H220 M380 58 H430 M590 58 H640"/>
+  <path class="flow-line" d="M300 86 V130 M225 130 H395 M225 130 V170 M395 130 V170"/>
+  <path class="flow-line" d="M715 86 V170"/>
+  <path class="flow-line" d="M715 220 V250 H90 V86"/>
+
+  <!-- Pastilles -->
+  <rect class="edge-chip" x="197" y="141" width="56" height="18"/>
+  <text class="edge-text" x="225" y="154">urgent</text>
+  <rect class="edge-chip" x="357" y="141" width="76" height="18"/>
+  <text class="edge-text" x="395" y="154">différable</text>
+  <rect class="edge-chip" x="655" y="119" width="120" height="18"/>
+  <text class="edge-text" x="715" y="132">critère atteint</text>
+  <rect class="edge-chip" x="415" y="241" width="136" height="18"/>
+  <text class="edge-text" x="483" y="254">actions correctives</text>
+
+  <!-- Flèches -->
+  <polygon class="flow-arrow" points="214,54 214,62 220,58"/>
+  <polygon class="flow-arrow" points="424,54 424,62 430,58"/>
+  <polygon class="flow-arrow" points="634,54 634,62 640,58"/>
+  <polygon class="flow-arrow" points="221,164 229,164 225,170"/>
+  <polygon class="flow-arrow" points="391,164 399,164 395,170"/>
+  <polygon class="flow-arrow" points="711,164 719,164 715,170"/>
+  <polygon class="flow-arrow" points="86,92 94,92 90,86"/>
+
+  <!-- Cycle -->
+  <rect class="flow-box q" x="10" y="30" width="160" height="56"/>
+  <text class="flow-label q-label" x="90" y="54" text-anchor="middle">Règle d'alerte</text>
+  <text class="edge-text" x="90" y="72">condition franchie</text>
+
+  <rect class="flow-box" x="220" y="30" width="160" height="56"/>
+  <text class="flow-label" x="300" y="54" text-anchor="middle">Alerte ouverte</text>
+  <text class="edge-text" x="300" y="72">notification</text>
+
+  <rect class="flow-box" x="430" y="30" width="160" height="56"/>
+  <text class="flow-label" x="510" y="54" text-anchor="middle">Acquittée</text>
+  <text class="edge-text" x="510" y="72">runbook suivi</text>
+
+  <rect class="flow-box" x="640" y="30" width="150" height="56"/>
+  <text class="flow-label" x="715" y="54" text-anchor="middle">Fermée</text>
+  <text class="edge-text" x="715" y="72">condition levée</text>
+
+  <!-- Destinations -->
+  <rect class="flow-box leaf" x="150" y="170" width="150" height="50"/>
+  <text class="flow-label leaf-label" x="225" y="191" text-anchor="middle">Page</text>
+  <text class="edge-text" x="225" y="209">PagerDuty, mobile</text>
+
+  <rect class="flow-box leaf" x="320" y="170" width="150" height="50"/>
+  <text class="flow-label leaf-label" x="395" y="191" text-anchor="middle">Ticket</text>
+  <text class="edge-text" x="395" y="209">Pub/Sub, Jira</text>
+
+  <rect class="flow-box leaf" x="640" y="170" width="150" height="50"/>
+  <text class="flow-label leaf-label" x="715" y="191" text-anchor="middle">Postmortem</text>
+  <text class="edge-text" x="715" y="209">sans reproche</text>
+</svg>

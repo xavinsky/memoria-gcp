@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 334" role="img" aria-label="Arbre de décision pour choisir une base de données">
+  <!-- Niveau 1 : besoin principal -->
+  <rect class="flow-box q" x="300" y="22" width="200" height="36"/>
+  <text class="flow-label q-label" x="400" y="45" text-anchor="middle">Besoin principal ?</text>
+  <path class="flow-line" d="M400 58 V95 M60 95 H740 M60 95 V276 M285 95 V156 M567 95 V156 M740 95 V276"/>
+  <rect class="edge-chip" x="30" y="116" width="60" height="18"/>
+  <text class="edge-text" x="60" y="129">Analyse</text>
+  <rect class="edge-chip" x="239" y="116" width="92" height="18"/>
+  <text class="edge-text" x="285" y="129">Transactions</text>
+  <rect class="edge-chip" x="539" y="116" width="56" height="18"/>
+  <text class="edge-text" x="567" y="129">NoSQL</text>
+  <rect class="edge-chip" x="715" y="116" width="50" height="18"/>
+  <text class="edge-text" x="740" y="129">Cache</text>
+  <polygon class="flow-arrow" points="281,156 289,156 285,162"/>
+  <polygon class="flow-arrow" points="563,156 571,156 567,162"/>
+
+  <!-- Niveau 2 : relationnel -->
+  <rect class="flow-box q" x="190" y="162" width="190" height="36"/>
+  <text class="flow-label q-label" x="285" y="185" text-anchor="middle">Portée et charge ?</text>
+  <path class="flow-line" d="M285 198 V225 M175 225 H395 M175 225 V276 M285 225 V276 M395 225 V276"/>
+  <rect class="edge-chip" x="143" y="244" width="64" height="18"/>
+  <text class="edge-text" x="175" y="257">mondiale</text>
+  <rect class="edge-chip" x="244" y="244" width="82" height="18"/>
+  <text class="edge-text" x="285" y="257">PG intensif</text>
+  <rect class="edge-chip" x="359" y="244" width="72" height="18"/>
+  <text class="edge-text" x="395" y="257">régionale</text>
+
+  <!-- Niveau 2 : NoSQL -->
+  <rect class="flow-box q" x="482" y="162" width="170" height="36"/>
+  <text class="flow-label q-label" x="567" y="185" text-anchor="middle">Modèle d'accès ?</text>
+  <path class="flow-line" d="M567 198 V225 M510 225 H625 M510 225 V276 M625 225 V276"/>
+  <rect class="edge-chip" x="476" y="244" width="68" height="18"/>
+  <text class="edge-text" x="510" y="257">documents</text>
+  <rect class="edge-chip" x="574" y="244" width="102" height="18"/>
+  <text class="edge-text" x="625" y="257">clé, haut débit</text>
+
+  <!-- Feuilles -->
+  <g>
+    <polygon class="flow-arrow" points="56,276 64,276 60,282"/>
+    <polygon class="flow-arrow" points="171,276 179,276 175,282"/>
+    <polygon class="flow-arrow" points="281,276 289,276 285,282"/>
+    <polygon class="flow-arrow" points="391,276 399,276 395,282"/>
+    <polygon class="flow-arrow" points="506,276 514,276 510,282"/>
+    <polygon class="flow-arrow" points="621,276 629,276 625,282"/>
+    <polygon class="flow-arrow" points="736,276 744,276 740,282"/>
+  </g>
+  <rect class="flow-box leaf" x="8" y="282" width="104" height="40"/>
+  <text class="flow-label leaf-label" x="60" y="307" text-anchor="middle">BigQuery</text>
+  <rect class="flow-box leaf" x="123" y="282" width="104" height="40"/>
+  <text class="flow-label leaf-label" x="175" y="307" text-anchor="middle">Spanner</text>
+  <rect class="flow-box leaf" x="233" y="282" width="104" height="40"/>
+  <text class="flow-label leaf-label" x="285" y="307" text-anchor="middle">AlloyDB</text>
+  <rect class="flow-box leaf" x="343" y="282" width="104" height="40"/>
+  <text class="flow-label leaf-label" x="395" y="307" text-anchor="middle">Cloud SQL</text>
+  <rect class="flow-box leaf" x="458" y="282" width="104" height="40"/>
+  <text class="flow-label leaf-label" x="510" y="307" text-anchor="middle">Firestore</text>
+  <rect class="flow-box leaf" x="573" y="282" width="104" height="40"/>
+  <text class="flow-label leaf-label" x="625" y="307" text-anchor="middle">Bigtable</text>
+  <rect class="flow-box leaf" x="688" y="282" width="104" height="40"/>
+  <text class="flow-label leaf-label" x="740" y="307" text-anchor="middle">Memorystore</text>
+</svg>

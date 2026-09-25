@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 306" role="img" aria-label="Boucle MLOps : dépôt Git, intégration continue, Artifact Registry, pipeline d'entraînement, Model Registry, endpoint, surveillance qui relance le pipeline">
+  <!-- Rangée 1 : code et intégration continue -->
+  <rect class="flow-box" x="20" y="20" width="170" height="50"/>
+  <text class="flow-label" x="105" y="41" text-anchor="middle">Dépôt Git</text>
+  <text class="edge-text" x="105" y="59">pipeline, composants</text>
+
+  <rect class="flow-box" x="260" y="20" width="200" height="50"/>
+  <text class="flow-label" x="360" y="41" text-anchor="middle">Intégration continue</text>
+  <text class="edge-text" x="360" y="59">tests, images, compilation</text>
+
+  <rect class="flow-box" x="530" y="20" width="250" height="50"/>
+  <text class="flow-label" x="655" y="41" text-anchor="middle">Artifact Registry</text>
+  <text class="edge-text" x="655" y="59">images, modèle de pipeline KFP</text>
+
+  <path class="flow-line" d="M190 45 H254 M460 45 H524 M655 70 V104"/>
+  <polygon class="flow-arrow" points="254,41 254,49 260,45"/>
+  <polygon class="flow-arrow" points="524,41 524,49 530,45"/>
+  <polygon class="flow-arrow" points="651,104 659,104 655,110"/>
+  <rect class="edge-chip" x="197" y="36" width="50" height="18"/>
+  <text class="edge-text" x="222" y="49">push</text>
+  <rect class="edge-chip" x="467" y="36" width="50" height="18"/>
+  <text class="edge-text" x="492" y="49">publie</text>
+  <rect class="edge-chip" x="585" y="79" width="140" height="18"/>
+  <text class="edge-text" x="655" y="92">run planifié ou déclenché</text>
+
+  <!-- Rangée 2 : pipeline -->
+  <rect class="flow-box q" x="20" y="110" width="760" height="92"/>
+  <text class="flow-label q-label" x="400" y="130" text-anchor="middle">Agent Platform Pipelines</text>
+  <rect class="flow-box" x="40" y="145" width="140" height="40"/>
+  <text class="flow-label" x="110" y="170" text-anchor="middle">Préparer</text>
+  <rect class="flow-box" x="225" y="145" width="140" height="40"/>
+  <text class="flow-label" x="295" y="170" text-anchor="middle">Entraîner</text>
+  <rect class="flow-box" x="410" y="145" width="140" height="40"/>
+  <text class="flow-label" x="480" y="170" text-anchor="middle">Évaluer</text>
+  <rect class="flow-box" x="595" y="145" width="165" height="40"/>
+  <text class="flow-label" x="677" y="170" text-anchor="middle">Enregistrer</text>
+  <path class="flow-line" d="M180 165 H219 M365 165 H404 M550 165 H589"/>
+  <polygon class="flow-arrow" points="219,161 219,169 225,165"/>
+  <polygon class="flow-arrow" points="404,161 404,169 410,165"/>
+  <polygon class="flow-arrow" points="589,161 589,169 595,165"/>
+  <rect class="edge-chip" x="552" y="146" width="36" height="16"/>
+  <text class="edge-text" x="570" y="158">seuil</text>
+
+  <!-- Rangée 3 : service et surveillance -->
+  <rect class="flow-box leaf" x="580" y="240" width="200" height="54"/>
+  <text class="flow-label leaf-label" x="680" y="263" text-anchor="middle">Model Registry</text>
+  <text class="edge-text" x="680" y="282">alias candidat, prod</text>
+
+  <rect class="flow-box leaf" x="310" y="240" width="180" height="54"/>
+  <text class="flow-label leaf-label" x="400" y="263" text-anchor="middle">Endpoint</text>
+  <text class="edge-text" x="400" y="282">trafic réparti</text>
+
+  <rect class="flow-box" x="20" y="240" width="200" height="54"/>
+  <text class="flow-label" x="120" y="263" text-anchor="middle">Model Monitoring</text>
+  <text class="edge-text" x="120" y="282">biais, dérive</text>
+
+  <path class="flow-line" d="M677 185 V234 M580 267 H496 M310 267 H226 M120 240 V208"/>
+  <polygon class="flow-arrow" points="673,234 681,234 677,240"/>
+  <polygon class="flow-arrow" points="496,263 496,271 490,267"/>
+  <polygon class="flow-arrow" points="226,263 226,271 220,267"/>
+  <polygon class="flow-arrow" points="116,208 124,208 120,202"/>
+  <rect class="edge-chip" x="495" y="258" width="80" height="18"/>
+  <text class="edge-text" x="535" y="271">déploiement</text>
+  <rect class="edge-chip" x="235" y="258" width="66" height="18"/>
+  <text class="edge-text" x="268" y="271">journaux</text>
+  <rect class="edge-chip" x="130" y="212" width="120" height="18"/>
+  <text class="edge-text" x="190" y="225">alerte : réentraîner</text>
+</svg>

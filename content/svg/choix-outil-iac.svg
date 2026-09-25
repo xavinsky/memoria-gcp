@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 334" role="img" aria-label="Arbre de décision pour choisir un outil d'Infrastructure as Code sur Google Cloud">
+  <!-- Niveau 1 : manière d'écrire l'infrastructure -->
+  <rect class="flow-box q" x="290" y="22" width="220" height="36"/>
+  <text class="flow-label q-label" x="400" y="45" text-anchor="middle">Comment l'équipe écrit ?</text>
+  <path class="flow-line" d="M400 58 V95 M70 95 H655 M70 95 V276 M200 95 V276 M395 95 V156 M655 95 V156"/>
+  <rect class="edge-chip" x="16" y="116" width="108" height="18"/>
+  <text class="edge-text" x="70" y="129">ponctuel, jetable</text>
+  <rect class="edge-chip" x="138" y="116" width="124" height="18"/>
+  <text class="edge-text" x="200" y="129">langage généraliste</text>
+  <rect class="edge-chip" x="345" y="116" width="100" height="18"/>
+  <text class="edge-text" x="395" y="129">HCL, modules</text>
+  <rect class="edge-chip" x="597" y="116" width="116" height="18"/>
+  <text class="edge-text" x="655" y="129">Kubernetes, GitOps</text>
+  <polygon class="flow-arrow" points="391,156 399,156 395,162"/>
+  <polygon class="flow-arrow" points="651,156 659,156 655,162"/>
+
+  <!-- Niveau 2 : HCL -->
+  <rect class="flow-box q" x="305" y="162" width="180" height="36"/>
+  <text class="flow-label q-label" x="395" y="185" text-anchor="middle">Qui exécute ?</text>
+  <path class="flow-line" d="M395 198 V225 M330 225 H460 M330 225 V276 M460 225 V276"/>
+  <rect class="edge-chip" x="286" y="244" width="88" height="18"/>
+  <text class="edge-text" x="330" y="257">notre CI</text>
+  <rect class="edge-chip" x="404" y="244" width="112" height="18"/>
+  <text class="edge-text" x="460" y="257">service géré</text>
+
+  <!-- Niveau 2 : Kubernetes -->
+  <rect class="flow-box q" x="565" y="162" width="180" height="36"/>
+  <text class="flow-label q-label" x="655" y="185" text-anchor="middle">Un cluster à soi ?</text>
+  <path class="flow-line" d="M655 198 V225 M590 225 H720 M590 225 V276 M720 225 V276"/>
+  <rect class="edge-chip" x="542" y="244" width="96" height="18"/>
+  <text class="edge-text" x="590" y="257">GKE existant</text>
+  <rect class="edge-chip" x="682" y="244" width="76" height="18"/>
+  <text class="edge-text" x="720" y="257">aucun</text>
+
+  <!-- Feuilles -->
+  <g>
+    <polygon class="flow-arrow" points="66,276 74,276 70,282"/>
+    <polygon class="flow-arrow" points="196,276 204,276 200,282"/>
+    <polygon class="flow-arrow" points="326,276 334,276 330,282"/>
+    <polygon class="flow-arrow" points="456,276 464,276 460,282"/>
+    <polygon class="flow-arrow" points="586,276 594,276 590,282"/>
+    <polygon class="flow-arrow" points="716,276 724,276 720,282"/>
+  </g>
+  <rect class="flow-box leaf" x="8" y="282" width="124" height="40"/>
+  <text class="flow-label leaf-label" x="70" y="307" text-anchor="middle">Script gcloud</text>
+  <rect class="flow-box leaf" x="138" y="282" width="124" height="40"/>
+  <text class="flow-label leaf-label" x="200" y="307" text-anchor="middle">Pulumi</text>
+  <rect class="flow-box leaf" x="268" y="282" width="124" height="40"/>
+  <text class="flow-label leaf-label" x="330" y="307" text-anchor="middle">Terraform en CI</text>
+  <rect class="flow-box leaf" x="398" y="282" width="124" height="40"/>
+  <text class="flow-label leaf-label" x="460" y="307" text-anchor="middle">Infra Manager</text>
+  <rect class="flow-box leaf" x="528" y="282" width="124" height="40"/>
+  <text class="flow-label leaf-label" x="590" y="307" text-anchor="middle">Config Connector</text>
+  <rect class="flow-box leaf" x="658" y="282" width="124" height="40"/>
+  <text class="flow-label leaf-label" x="720" y="307" text-anchor="middle">Config Controller</text>
+</svg>

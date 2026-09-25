@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 236" role="img" aria-label="Cycle de réglage d'un modèle Gemini : jeu JSONL dans Cloud Storage, job de réglage régional, points de contrôle, évaluation contre le modèle de base, puis endpoint multirégional appelé par l'application, ou retour aux données">
+  <!-- Liaisons -->
+  <path class="flow-line" d="M180 48 H230"/>
+  <path class="flow-line" d="M400 48 H450"/>
+  <path class="flow-line" d="M525 76 V160"/>
+  <path class="flow-line" d="M600 188 H640"/>
+  <path class="flow-line" d="M715 160 V76"/>
+  <path class="flow-line" d="M450 202 H95 V76"/>
+
+  <!-- Pastilles -->
+  <rect class="edge-chip" x="182" y="57" width="46" height="18"/>
+  <text class="edge-text" x="205" y="70">tune()</text>
+  <rect class="edge-chip" x="480" y="109" width="90" height="18"/>
+  <text class="edge-text" x="525" y="122">choix du défaut</text>
+  <rect class="edge-chip" x="665" y="109" width="100" height="18"/>
+  <text class="edge-text" x="715" y="122">model=ENDPOINT</text>
+  <rect class="edge-chip" x="170" y="193" width="210" height="18"/>
+  <text class="edge-text" x="275" y="206">insuffisant : revoir les données</text>
+
+  <!-- Flèches -->
+  <polygon class="flow-arrow" points="224,44 224,52 230,48"/>
+  <polygon class="flow-arrow" points="444,44 444,52 450,48"/>
+  <polygon class="flow-arrow" points="521,154 529,154 525,160"/>
+  <polygon class="flow-arrow" points="634,184 634,192 640,188"/>
+  <polygon class="flow-arrow" points="711,82 719,82 715,76"/>
+  <polygon class="flow-arrow" points="91,82 99,82 95,76"/>
+
+  <!-- Nœuds -->
+  <rect class="flow-box" x="10" y="20" width="170" height="56"/>
+  <text class="flow-label" x="95" y="44" text-anchor="middle">Cloud Storage</text>
+  <text class="edge-text" x="95" y="62">train, validation (JSONL)</text>
+
+  <rect class="flow-box q" x="230" y="20" width="170" height="56"/>
+  <text class="flow-label q-label" x="315" y="44" text-anchor="middle">Job de réglage</text>
+  <text class="edge-text" x="315" y="62">us-central1, europe-west4</text>
+
+  <rect class="flow-box q" x="450" y="20" width="150" height="56"/>
+  <text class="flow-label q-label" x="525" y="44" text-anchor="middle">Points de contrôle</text>
+  <text class="edge-text" x="525" y="62">perte, précision</text>
+
+  <rect class="flow-box q" x="450" y="160" width="150" height="56"/>
+  <text class="flow-label q-label" x="525" y="184" text-anchor="middle">Évaluation</text>
+  <text class="edge-text" x="525" y="202">réglé contre base</text>
+
+  <rect class="flow-box leaf" x="640" y="160" width="150" height="56"/>
+  <text class="flow-label leaf-label" x="715" y="184" text-anchor="middle">Endpoint réglé</text>
+  <text class="edge-text" x="715" y="203">us ou eu, partagé</text>
+
+  <rect class="flow-box" x="640" y="20" width="150" height="56"/>
+  <text class="flow-label" x="715" y="44" text-anchor="middle">Application</text>
+  <text class="edge-text" x="715" y="62">generateContent</text>
+</svg>

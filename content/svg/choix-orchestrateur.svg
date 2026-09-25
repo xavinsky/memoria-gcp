@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 398" role="img" aria-label="Arbre de décision pour choisir un orchestrateur de pipelines">
+  <!-- Niveau 1 : déclencheur -->
+  <rect class="flow-box q" x="129" y="16" width="210" height="36"/>
+  <text class="flow-label q-label" x="234" y="39" text-anchor="middle">Qu'est-ce qui déclenche ?</text>
+  <path class="flow-line" d="M234 52 V86 M76 86 H391 M76 86 V334 M391 86 V124"/>
+  <rect class="edge-chip" x="36" y="100" width="80" height="18"/>
+  <text class="edge-text" x="76" y="113">événement</text>
+  <rect class="edge-chip" x="355" y="100" width="72" height="18"/>
+  <text class="edge-text" x="391" y="113">horaire</text>
+  <polygon class="flow-arrow" points="387,124 395,124 391,130"/>
+
+  <!-- Niveau 2 : nombre d'étapes -->
+  <rect class="flow-box q" x="296" y="130" width="190" height="36"/>
+  <text class="flow-label q-label" x="391" y="153" text-anchor="middle">Combien d'étapes ?</text>
+  <path class="flow-line" d="M391 166 V190 M216 190 H566 M216 190 V334 M566 190 V234"/>
+  <rect class="edge-chip" x="179" y="204" width="74" height="18"/>
+  <text class="edge-text" x="216" y="217">une seule</text>
+  <rect class="edge-chip" x="529" y="204" width="74" height="18"/>
+  <text class="edge-text" x="566" y="217">plusieurs</text>
+  <polygon class="flow-arrow" points="562,234 570,234 566,240"/>
+
+  <!-- Niveau 3 : nature de l'enchaînement -->
+  <rect class="flow-box q" x="451" y="240" width="230" height="36"/>
+  <text class="flow-label q-label" x="566" y="263" text-anchor="middle">Que faut-il enchaîner ?</text>
+  <path class="flow-line" d="M566 276 V296 M356 296 H776 M356 296 V334 M496 296 V334 M636 296 V334 M776 296 V334"/>
+  <rect class="edge-chip" x="306" y="305" width="100" height="18"/>
+  <text class="edge-text" x="356" y="318">SQL BigQuery</text>
+  <rect class="edge-chip" x="446" y="305" width="100" height="18"/>
+  <text class="edge-text" x="496" y="318">quelques API</text>
+  <rect class="edge-chip" x="576" y="305" width="120" height="18"/>
+  <text class="edge-text" x="636" y="318">DAG multisystème</text>
+  <rect class="edge-chip" x="736" y="305" width="80" height="18"/>
+  <text class="edge-text" x="776" y="318">étapes ML</text>
+
+  <!-- Feuilles -->
+  <g>
+    <polygon class="flow-arrow" points="72,334 80,334 76,340"/>
+    <polygon class="flow-arrow" points="212,334 220,334 216,340"/>
+    <polygon class="flow-arrow" points="352,334 360,334 356,340"/>
+    <polygon class="flow-arrow" points="492,334 500,334 496,340"/>
+    <polygon class="flow-arrow" points="632,334 640,334 636,340"/>
+    <polygon class="flow-arrow" points="772,334 780,334 776,340"/>
+  </g>
+  <rect class="flow-box leaf" x="8" y="340" width="136" height="46"/>
+  <text class="flow-label leaf-label" x="76" y="359" text-anchor="middle">Eventarc<tspan x="76" dy="17">→ Run, Workflows</tspan></text>
+  <rect class="flow-box leaf" x="148" y="340" width="136" height="46"/>
+  <text class="flow-label leaf-label" x="216" y="368" text-anchor="middle">Cloud Scheduler</text>
+  <rect class="flow-box leaf" x="288" y="340" width="136" height="46"/>
+  <text class="flow-label leaf-label" x="356" y="359" text-anchor="middle">Dataform ou<tspan x="356" dy="17">requête planifiée</tspan></text>
+  <rect class="flow-box leaf" x="428" y="340" width="136" height="46"/>
+  <text class="flow-label leaf-label" x="496" y="368" text-anchor="middle">Workflows</text>
+  <rect class="flow-box leaf" x="568" y="340" width="136" height="46"/>
+  <text class="flow-label leaf-label" x="636" y="359" text-anchor="middle">Managed<tspan x="636" dy="17">Airflow</tspan></text>
+  <rect class="flow-box leaf" x="708" y="340" width="136" height="46"/>
+  <text class="flow-label leaf-label" x="776" y="359" text-anchor="middle">Agent Platform<tspan x="776" dy="17">Pipelines</tspan></text>
+</svg>

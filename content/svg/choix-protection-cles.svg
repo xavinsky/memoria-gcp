@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 262" role="img" aria-label="Arbre de décision : de l'exigence sur les clés au niveau de protection du chiffrement">
+  <!-- Question -->
+  <rect class="flow-box q" x="290" y="18" width="220" height="36"/>
+  <text class="flow-label q-label" x="400" y="41" text-anchor="middle">Exigence sur les clés ?</text>
+  <path class="flow-line" d="M400 54 V90 M70 90 H720 M70 90 V190 M200 90 V190 M330 90 V190 M460 90 V190 M590 90 V190 M720 90 V190"/>
+
+  <!-- Branches -->
+  <rect class="edge-chip" x="42" y="124" width="56" height="18"/>
+  <text class="edge-text" x="70" y="137">aucune</text>
+  <rect class="edge-chip" x="140" y="124" width="120" height="18"/>
+  <text class="edge-text" x="200" y="137">révoquer, détruire</text>
+  <rect class="edge-chip" x="272" y="124" width="116" height="18"/>
+  <text class="edge-text" x="330" y="137">FIPS 140-2 niv. 3</text>
+  <rect class="edge-chip" x="400" y="124" width="120" height="18"/>
+  <text class="edge-text" x="460" y="137">HSM à soi, quorum</text>
+  <rect class="edge-chip" x="536" y="124" width="108" height="18"/>
+  <text class="edge-text" x="590" y="137">hors de Google</text>
+  <rect class="edge-chip" x="662" y="124" width="116" height="18"/>
+  <text class="edge-text" x="720" y="137">données en mémoire</text>
+
+  <!-- Flèches -->
+  <polygon class="flow-arrow" points="66,190 74,190 70,196"/>
+  <polygon class="flow-arrow" points="196,190 204,190 200,196"/>
+  <polygon class="flow-arrow" points="326,190 334,190 330,196"/>
+  <polygon class="flow-arrow" points="456,190 464,190 460,196"/>
+  <polygon class="flow-arrow" points="586,190 594,190 590,196"/>
+  <polygon class="flow-arrow" points="716,190 724,190 720,196"/>
+
+  <!-- Feuilles -->
+  <rect class="flow-box leaf" x="8" y="196" width="124" height="56"/>
+  <text class="flow-label leaf-label" x="70" y="220" text-anchor="middle">Clés Google</text>
+  <text class="edge-text" x="70" y="239">défaut, gratuit</text>
+
+  <rect class="flow-box leaf" x="138" y="196" width="124" height="56"/>
+  <text class="flow-label leaf-label" x="200" y="220" text-anchor="middle">Autokey</text>
+  <text class="edge-text" x="200" y="239">ou CMEK manuelle</text>
+
+  <rect class="flow-box leaf" x="268" y="196" width="124" height="56"/>
+  <text class="flow-label leaf-label" x="330" y="220" text-anchor="middle">Cloud HSM</text>
+  <text class="edge-text" x="330" y="239">multilocataire</text>
+
+  <rect class="flow-box leaf" x="398" y="196" width="124" height="56"/>
+  <text class="flow-label leaf-label" x="460" y="220" text-anchor="middle">HSM dédié</text>
+  <text class="edge-text" x="460" y="239">mono-locataire</text>
+
+  <rect class="flow-box leaf" x="528" y="196" width="124" height="56"/>
+  <text class="flow-label leaf-label" x="590" y="220" text-anchor="middle">Cloud EKM</text>
+  <text class="edge-text" x="590" y="239">internet ou VPC</text>
+
+  <rect class="flow-box leaf" x="658" y="196" width="124" height="56"/>
+  <text class="flow-label leaf-label" x="720" y="220" text-anchor="middle">Confidential</text>
+  <text class="edge-text" x="720" y="239">VM, GKE, Space</text>
+</svg>

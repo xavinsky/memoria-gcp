@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 290" role="img" aria-label="Chaîne de détection : journaux d'audit et journaux réseau routés par un puits agrégé vers un projet de journaux central, lus par Event Threat Detection ; Security Command Center analyse aussi les ressources, envoie ses résultats vers Google SecOps et vers Pub/Sub pour la remédiation">
+  <!-- Liaisons -->
+  <path class="flow-line" d="M160 44 H190 M160 114 H190 M190 44 V212 H220 M190 79 H220"/>
+  <path class="flow-line" d="M140 244 H220"/>
+  <path class="flow-line" d="M390 79 H470"/>
+  <path class="flow-line" d="M390 214 H420 V152 H650"/>
+  <path class="flow-line" d="M390 242 H470"/>
+  <path class="flow-line" d="M610 79 H630 V124 H650"/>
+  <path class="flow-line" d="M610 228 H650"/>
+
+  <!-- Pastilles -->
+  <rect class="edge-chip" x="173" y="154" width="34" height="18"/>
+  <text class="edge-text" x="190" y="167">ETD</text>
+  <rect class="edge-chip" x="145" y="235" width="70" height="18"/>
+  <text class="edge-text" x="180" y="248">SHA, CTD</text>
+  <rect class="edge-chip" x="400" y="70" width="60" height="18"/>
+  <text class="edge-text" x="430" y="83">routage</text>
+  <rect class="edge-chip" x="492" y="143" width="84" height="18"/>
+  <text class="edge-text" x="534" y="156">intégration</text>
+  <rect class="edge-chip" x="394" y="233" width="72" height="18"/>
+  <text class="edge-text" x="430" y="246">résultats</text>
+
+  <!-- Flèches -->
+  <polygon class="flow-arrow" points="214,75 214,83 220,79"/>
+  <polygon class="flow-arrow" points="214,208 214,216 220,212"/>
+  <polygon class="flow-arrow" points="214,240 214,248 220,244"/>
+  <polygon class="flow-arrow" points="464,75 464,83 470,79"/>
+  <polygon class="flow-arrow" points="464,238 464,246 470,242"/>
+  <polygon class="flow-arrow" points="644,120 644,128 650,124"/>
+  <polygon class="flow-arrow" points="644,148 644,156 650,152"/>
+  <polygon class="flow-arrow" points="644,224 644,232 650,228"/>
+
+  <!-- Sources -->
+  <rect class="flow-box" x="10" y="20" width="150" height="48"/>
+  <text class="flow-label" x="85" y="41" text-anchor="middle">Journaux d'audit</text>
+  <text class="edge-text" x="85" y="58">admin, accès, refus</text>
+
+  <rect class="flow-box" x="10" y="90" width="150" height="48"/>
+  <text class="flow-label" x="85" y="111" text-anchor="middle">Journaux réseau</text>
+  <text class="edge-text" x="85" y="128">flux VPC, DNS</text>
+
+  <rect class="flow-box" x="10" y="220" width="130" height="48"/>
+  <text class="flow-label" x="75" y="241" text-anchor="middle">Ressources</text>
+  <text class="edge-text" x="75" y="258">config., VM, GKE</text>
+
+  <!-- Collecte et détection -->
+  <rect class="flow-box q" x="220" y="51" width="170" height="56"/>
+  <text class="flow-label q-label" x="305" y="75" text-anchor="middle">Puits agrégé</text>
+  <text class="edge-text" x="305" y="94">organisation</text>
+
+  <rect class="flow-box q" x="220" y="200" width="170" height="56"/>
+  <text class="flow-label q-label" x="305" y="224" text-anchor="middle">Security Command Center</text>
+  <text class="edge-text" x="305" y="243">détection, posture</text>
+
+  <rect class="flow-box" x="470" y="51" width="140" height="56"/>
+  <text class="flow-label" x="540" y="75" text-anchor="middle">Projet de journaux</text>
+  <text class="edge-text" x="540" y="94">rétention longue, SQL</text>
+
+  <rect class="flow-box" x="470" y="200" width="140" height="56"/>
+  <text class="flow-label" x="540" y="224" text-anchor="middle">Pub/Sub</text>
+  <text class="edge-text" x="540" y="243">notifications</text>
+
+  <!-- Réponse -->
+  <rect class="flow-box leaf" x="650" y="110" width="140" height="56"/>
+  <text class="flow-label leaf-label" x="720" y="134" text-anchor="middle">Google SecOps</text>
+  <text class="edge-text" x="720" y="153">SIEM, SOAR, cas</text>
+
+  <rect class="flow-box leaf" x="650" y="200" width="140" height="56"/>
+  <text class="flow-label leaf-label" x="720" y="224" text-anchor="middle">Remédiation</text>
+  <text class="edge-text" x="720" y="243">Cloud Run, tickets</text>
+</svg>

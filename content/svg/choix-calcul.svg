@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 352" role="img" aria-label="Arbre de décision pour choisir une plateforme de calcul : Cloud Run, GKE Autopilot, GKE Standard, worker pool, job Cloud Run, Batch ou Compute Engine">
+  <!-- Niveau 1 : forme de la charge -->
+  <rect class="flow-box q" x="320" y="22" width="200" height="36"/>
+  <text class="flow-label q-label" x="420" y="45" text-anchor="middle">Forme de la charge ?</text>
+  <path class="flow-line" d="M420 58 V95 M184 95 H774 M184 95 V156 M420 95 V290 M597 95 V156 M774 95 V290"/>
+  <rect class="edge-chip" x="120" y="116" width="128" height="18"/>
+  <text class="edge-text" x="184" y="129">service, événements</text>
+  <rect class="edge-chip" x="354" y="116" width="132" height="18"/>
+  <text class="edge-text" x="420" y="129">consommateur de file</text>
+  <rect class="edge-chip" x="531" y="116" width="132" height="18"/>
+  <text class="edge-text" x="597" y="129">tâche qui se termine</text>
+  <rect class="edge-chip" x="724" y="116" width="100" height="18"/>
+  <text class="edge-text" x="774" y="129">OS complet, VM</text>
+  <polygon class="flow-arrow" points="180,156 188,156 184,162"/>
+  <polygon class="flow-arrow" points="593,156 601,156 597,162"/>
+
+  <!-- Niveau 2 : service -->
+  <rect class="flow-box q" x="84" y="162" width="200" height="36"/>
+  <text class="flow-label q-label" x="184" y="185" text-anchor="middle">Tient dans Cloud Run ?</text>
+  <path class="flow-line" d="M184 198 V225 M66 225 H302 M66 225 V290 M184 225 V290 M302 225 V290"/>
+  <rect class="edge-chip" x="46" y="244" width="40" height="18"/>
+  <text class="edge-text" x="66" y="257">oui</text>
+  <rect class="edge-chip" x="138" y="244" width="92" height="18"/>
+  <text class="edge-text" x="184" y="257">état, API K8s</text>
+  <rect class="edge-chip" x="250" y="244" width="104" height="18"/>
+  <text class="edge-text" x="302" y="257">accès aux nœuds</text>
+
+  <!-- Niveau 2 : tâche -->
+  <rect class="flow-box q" x="512" y="162" width="170" height="36"/>
+  <text class="flow-label q-label" x="597" y="185" text-anchor="middle">Quel environnement ?</text>
+  <path class="flow-line" d="M597 198 V225 M538 225 H656 M538 225 V290 M656 225 V290"/>
+  <rect class="edge-chip" x="484" y="244" width="108" height="18"/>
+  <text class="edge-text" x="538" y="257">conteneur, ≤ 7 j</text>
+  <rect class="edge-chip" x="610" y="244" width="92" height="18"/>
+  <text class="edge-text" x="656" y="257">VM, MPI, 14 j</text>
+
+  <!-- Feuilles -->
+  <g>
+    <polygon class="flow-arrow" points="62,290 70,290 66,296"/>
+    <polygon class="flow-arrow" points="180,290 188,290 184,296"/>
+    <polygon class="flow-arrow" points="298,290 306,290 302,296"/>
+    <polygon class="flow-arrow" points="416,290 424,290 420,296"/>
+    <polygon class="flow-arrow" points="534,290 542,290 538,296"/>
+    <polygon class="flow-arrow" points="652,290 660,290 656,296"/>
+    <polygon class="flow-arrow" points="770,290 778,290 774,296"/>
+  </g>
+  <rect class="flow-box leaf" x="10" y="296" width="112" height="46"/>
+  <text class="flow-label leaf-label" x="66" y="316" text-anchor="middle">Cloud Run</text>
+  <text class="edge-text" x="66" y="333">service, fonction</text>
+  <rect class="flow-box leaf" x="128" y="296" width="112" height="46"/>
+  <text class="flow-label leaf-label" x="184" y="316" text-anchor="middle">GKE Autopilot</text>
+  <text class="edge-text" x="184" y="333">facturé au Pod</text>
+  <rect class="flow-box leaf" x="246" y="296" width="112" height="46"/>
+  <text class="flow-label leaf-label" x="302" y="316" text-anchor="middle">GKE Standard</text>
+  <text class="edge-text" x="302" y="333">pools de nœuds</text>
+  <rect class="flow-box leaf" x="364" y="296" width="112" height="46"/>
+  <text class="flow-label leaf-label" x="420" y="316" text-anchor="middle">Worker pool</text>
+  <text class="edge-text" x="420" y="333">Cloud Run</text>
+  <rect class="flow-box leaf" x="482" y="296" width="112" height="46"/>
+  <text class="flow-label leaf-label" x="538" y="316" text-anchor="middle">Cloud Run job</text>
+  <text class="edge-text" x="538" y="333">tâches en lot</text>
+  <rect class="flow-box leaf" x="600" y="296" width="112" height="46"/>
+  <text class="flow-label leaf-label" x="656" y="316" text-anchor="middle">Batch</text>
+  <text class="edge-text" x="656" y="333">VM par job</text>
+  <rect class="flow-box leaf" x="718" y="296" width="112" height="46"/>
+  <text class="flow-label leaf-label" x="774" y="316" text-anchor="middle">Compute Engine</text>
+  <text class="edge-text" x="774" y="333">MIG, Spot</text>
+</svg>

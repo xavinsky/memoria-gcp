@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" role="img" aria-label="Chaîne CI/CD data et IA : un dépôt Git, une chaîne d'intégration, puis quatre artefacts déployés vers Dataform, Managed Airflow, Dataflow et Agent Platform Pipelines">
+  <!-- Liaisons -->
+  <path class="flow-line" d="M120 168 H165"/>
+  <path class="flow-line" d="M295 168 H330 M330 48 V288 M330 48 H470 M330 128 H470 M330 208 H470 M330 288 H470"/>
+
+  <!-- Pastilles -->
+  <rect class="edge-chip" x="338" y="39" width="124" height="18"/>
+  <text class="edge-text" x="400" y="52">commit fusionné</text>
+  <rect class="edge-chip" x="338" y="119" width="124" height="18"/>
+  <text class="edge-text" x="400" y="132">rsync des .py</text>
+  <rect class="edge-chip" x="338" y="199" width="124" height="18"/>
+  <text class="edge-text" x="400" y="212">image + spec JSON</text>
+  <rect class="edge-chip" x="338" y="279" width="124" height="18"/>
+  <text class="edge-text" x="400" y="292">YAML compilé</text>
+
+  <!-- Flèches -->
+  <polygon class="flow-arrow" points="159,164 159,172 165,168"/>
+  <polygon class="flow-arrow" points="464,44 464,52 470,48"/>
+  <polygon class="flow-arrow" points="464,124 464,132 470,128"/>
+  <polygon class="flow-arrow" points="464,204 464,212 470,208"/>
+  <polygon class="flow-arrow" points="464,284 464,292 470,288"/>
+
+  <!-- Nœuds -->
+  <rect class="flow-box" x="10" y="140" width="110" height="56"/>
+  <text class="flow-label" x="65" y="164" text-anchor="middle">Dépôt Git</text>
+  <text class="edge-text" x="65" y="182">branche, PR</text>
+
+  <rect class="flow-box q" x="165" y="140" width="130" height="56"/>
+  <text class="flow-label q-label" x="230" y="164" text-anchor="middle">Chaîne CI</text>
+  <text class="edge-text" x="230" y="182">tests, compilation</text>
+
+  <rect class="flow-box leaf" x="470" y="20" width="320" height="56"/>
+  <text class="flow-label leaf-label" x="630" y="44" text-anchor="middle">Dataform</text>
+  <text class="edge-text" x="630" y="63">release, puis configuration de workflow</text>
+
+  <rect class="flow-box leaf" x="470" y="100" width="320" height="56"/>
+  <text class="flow-label leaf-label" x="630" y="124" text-anchor="middle">Managed Airflow</text>
+  <text class="edge-text" x="630" y="143">dossier dags/ du bucket de l'environnement</text>
+
+  <rect class="flow-box leaf" x="470" y="180" width="320" height="56"/>
+  <text class="flow-label leaf-label" x="630" y="204" text-anchor="middle">Dataflow</text>
+  <text class="edge-text" x="630" y="223">modèle Flex : Artifact Registry + Cloud Storage</text>
+
+  <rect class="flow-box leaf" x="470" y="260" width="320" height="56"/>
+  <text class="flow-label leaf-label" x="630" y="284" text-anchor="middle">Agent Platform Pipelines</text>
+  <text class="edge-text" x="630" y="303">modèle KFP dans Artifact Registry</text>
+
+  <!-- Promotion -->
+  <text class="edge-text" x="400" y="346">même artefact promu en dev, staging puis prod : seuls les paramètres changent</text>
+</svg>

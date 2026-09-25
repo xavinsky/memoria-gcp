@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 340" role="img" aria-label="Arbre de décision pour partager des données BigQuery : IAM et vue autorisée pour une équipe interne, partage BigQuery ou salle blanche pour un partenaire, Connected Sheets pour un tableur, Data Studio ou Looker pour un tableau de bord, export vers Cloud Storage pour un autre outil">
+  <!-- Niveau 1 : qui consomme -->
+  <rect class="flow-box q" x="280" y="22" width="240" height="36"/>
+  <text class="flow-label q-label" x="400" y="45" text-anchor="middle">Qui consomme la donnée ?</text>
+  <path class="flow-line" d="M400 58 V95 M70 95 H720 M70 95 V276 M265 95 V156 M460 95 V276 M590 95 V276 M720 95 V276"/>
+  <rect class="edge-chip" x="20" y="116" width="100" height="18"/>
+  <text class="edge-text" x="70" y="129">équipe interne</text>
+  <rect class="edge-chip" x="227" y="116" width="76" height="18"/>
+  <text class="edge-text" x="265" y="129">partenaire</text>
+  <rect class="edge-chip" x="432" y="116" width="56" height="18"/>
+  <text class="edge-text" x="460" y="129">tableur</text>
+  <rect class="edge-chip" x="538" y="116" width="104" height="18"/>
+  <text class="edge-text" x="590" y="129">tableau de bord</text>
+  <rect class="edge-chip" x="680" y="116" width="80" height="18"/>
+  <text class="edge-text" x="720" y="129">autre outil</text>
+  <polygon class="flow-arrow" points="261,156 269,156 265,162"/>
+
+  <!-- Niveau 2 : partenaire externe -->
+  <rect class="flow-box q" x="150" y="162" width="230" height="36"/>
+  <text class="flow-label q-label" x="265" y="185" text-anchor="middle">Croiser des données sensibles ?</text>
+  <path class="flow-line" d="M265 198 V225 M200 225 H330 M200 225 V276 M330 225 V276"/>
+  <rect class="edge-chip" x="180" y="244" width="40" height="18"/>
+  <text class="edge-text" x="200" y="257">non</text>
+  <rect class="edge-chip" x="310" y="244" width="40" height="18"/>
+  <text class="edge-text" x="330" y="257">oui</text>
+
+  <!-- Feuilles -->
+  <g>
+    <polygon class="flow-arrow" points="66,276 74,276 70,282"/>
+    <polygon class="flow-arrow" points="196,276 204,276 200,282"/>
+    <polygon class="flow-arrow" points="326,276 334,276 330,282"/>
+    <polygon class="flow-arrow" points="456,276 464,276 460,282"/>
+    <polygon class="flow-arrow" points="586,276 594,276 590,282"/>
+    <polygon class="flow-arrow" points="716,276 724,276 720,282"/>
+  </g>
+  <rect class="flow-box leaf" x="8" y="282" width="124" height="46"/>
+  <text class="flow-label leaf-label" x="70" y="301" text-anchor="middle">IAM et vue<tspan x="70" dy="17">autorisée</tspan></text>
+  <rect class="flow-box leaf" x="138" y="282" width="124" height="46"/>
+  <text class="flow-label leaf-label" x="200" y="301" text-anchor="middle">Partage<tspan x="200" dy="17">BigQuery</tspan></text>
+  <rect class="flow-box leaf" x="268" y="282" width="124" height="46"/>
+  <text class="flow-label leaf-label" x="330" y="301" text-anchor="middle">Salle<tspan x="330" dy="17">blanche</tspan></text>
+  <rect class="flow-box leaf" x="398" y="282" width="124" height="46"/>
+  <text class="flow-label leaf-label" x="460" y="301" text-anchor="middle">Connected<tspan x="460" dy="17">Sheets</tspan></text>
+  <rect class="flow-box leaf" x="528" y="282" width="124" height="46"/>
+  <text class="flow-label leaf-label" x="590" y="301" text-anchor="middle">Data Studio<tspan x="590" dy="17">ou Looker</tspan></text>
+  <rect class="flow-box leaf" x="658" y="282" width="124" height="46"/>
+  <text class="flow-label leaf-label" x="720" y="301" text-anchor="middle">Export<tspan x="720" dy="17">Cloud Storage</tspan></text>
+</svg>

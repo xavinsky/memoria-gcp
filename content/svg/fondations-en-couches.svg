@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 236" role="img" aria-label="Fondations en couches : amorçage, organisation, réseau, projets, applications ; chaque couche lit les sorties de la précédente par StackReference">
+  <!-- Rythme de changement -->
+  <text class="edge-text" x="63" y="22">une fois</text>
+  <text class="edge-text" x="230" y="22">rare</text>
+  <text class="edge-text" x="397" y="22">rare</text>
+  <text class="edge-text" x="564" y="22">par équipe</text>
+  <text class="edge-text" x="731" y="22">fréquent</text>
+
+  <!-- Liaisons : sorties lues par StackReference -->
+  <path class="flow-line" d="M122 72 H171 M146 72 V122"/>
+  <polygon class="flow-arrow" points="165,68 165,76 171,72"/>
+  <path class="flow-line" d="M289 72 H338 M313 72 V122"/>
+  <polygon class="flow-arrow" points="332,68 332,76 338,72"/>
+  <path class="flow-line" d="M456 72 H505 M480 72 V122"/>
+  <polygon class="flow-arrow" points="499,68 499,76 505,72"/>
+  <path class="flow-line" d="M623 72 H672 M647 72 V122"/>
+  <polygon class="flow-arrow" points="666,68 666,76 672,72"/>
+  <rect class="edge-chip" x="94" y="122" width="104" height="18"/>
+  <text class="edge-text" x="146" y="135">comptes CI</text>
+  <rect class="edge-chip" x="261" y="122" width="104" height="18"/>
+  <text class="edge-text" x="313" y="135">ID des dossiers</text>
+  <rect class="edge-chip" x="428" y="122" width="104" height="18"/>
+  <text class="edge-text" x="480" y="135">sous-réseaux</text>
+  <rect class="edge-chip" x="595" y="122" width="104" height="18"/>
+  <text class="edge-text" x="647" y="135">ID de projet</text>
+
+  <!-- Couches -->
+  <rect class="flow-box q" x="4" y="34" width="118" height="76"/>
+  <text class="flow-label q-label" x="63" y="58" text-anchor="middle">Amorçage</text>
+  <text class="edge-text" x="63" y="78">gcloud + stack</text>
+  <text class="edge-text" x="63" y="96">bucket, clé, WIF</text>
+  <rect class="flow-box" x="171" y="34" width="118" height="76"/>
+  <text class="flow-label" x="230" y="58" text-anchor="middle">Organisation</text>
+  <text class="edge-text" x="230" y="78">stack org</text>
+  <text class="edge-text" x="230" y="96">dossiers, règles</text>
+  <rect class="flow-box" x="338" y="34" width="118" height="76"/>
+  <text class="flow-label" x="397" y="58" text-anchor="middle">Réseau</text>
+  <text class="edge-text" x="397" y="78">stack par env.</text>
+  <text class="edge-text" x="397" y="96">Shared VPC</text>
+  <rect class="flow-box" x="505" y="34" width="118" height="76"/>
+  <text class="flow-label" x="564" y="58" text-anchor="middle">Projets</text>
+  <text class="edge-text" x="564" y="78">stack par env.</text>
+  <text class="edge-text" x="564" y="96">project factory</text>
+  <rect class="flow-box leaf" x="672" y="34" width="118" height="76"/>
+  <text class="flow-label leaf-label" x="731" y="58" text-anchor="middle">Applications</text>
+  <text class="edge-text" x="731" y="78">stack par appli</text>
+  <text class="edge-text" x="731" y="96">Cloud Run, bases</text>
+
+  <!-- Socle commun -->
+  <rect class="edge-chip" x="4" y="170" width="792" height="20"/>
+  <text class="edge-text" x="400" y="184">état : gs://BUCKET_ETAT dans prj-b-seed · secrets chiffrés par une clé Cloud KMS (gcpkms://…)</text>
+  <rect class="edge-chip" x="4" y="200" width="792" height="20"/>
+  <text class="edge-text" x="400" y="214">preview sur chaque pull request, up à la fusion · un compte de service par couche, emprunté par la CI via WIF</text>
+</svg>

@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 334" role="img" aria-label="Arbre de décision pour protéger une donnée sensible : transformer la donnée pour les consommateurs qui n'ont pas besoin de la valeur, ou filtrer la lecture dans BigQuery par colonne, par ligne ou par vue autorisée">
+  <!-- Niveau 1 : qui lit la valeur en clair -->
+  <rect class="flow-box q" x="270" y="22" width="260" height="36"/>
+  <text class="flow-label q-label" x="400" y="45" text-anchor="middle">Qui doit lire la valeur en clair ?</text>
+  <path class="flow-line" d="M400 58 V95 M135 95 H720 M135 95 V156 M395 95 V156 M590 95 V276 M720 95 V276"/>
+  <rect class="edge-chip" x="79" y="116" width="112" height="18"/>
+  <text class="edge-text" x="135" y="129">personne en aval</text>
+  <rect class="edge-chip" x="330" y="116" width="130" height="18"/>
+  <text class="edge-text" x="395" y="129">certains : colonne</text>
+  <rect class="edge-chip" x="531" y="116" width="118" height="18"/>
+  <text class="edge-text" x="590" y="129">certains : lignes</text>
+  <rect class="edge-chip" x="672" y="116" width="96" height="18"/>
+  <text class="edge-text" x="720" y="129">autre équipe</text>
+  <polygon class="flow-arrow" points="131,156 139,156 135,162"/>
+  <polygon class="flow-arrow" points="391,156 399,156 395,162"/>
+
+  <!-- Niveau 2 : transformer la donnée -->
+  <rect class="flow-box q" x="45" y="162" width="180" height="36"/>
+  <text class="flow-label q-label" x="135" y="185" text-anchor="middle">Revenir à la valeur ?</text>
+  <path class="flow-line" d="M135 198 V225 M70 225 H200 M70 225 V276 M200 225 V276"/>
+  <rect class="edge-chip" x="50" y="244" width="40" height="18"/>
+  <text class="edge-text" x="70" y="257">oui</text>
+  <rect class="edge-chip" x="180" y="244" width="40" height="18"/>
+  <text class="edge-text" x="200" y="257">non</text>
+
+  <!-- Niveau 2 : filtrer une colonne -->
+  <rect class="flow-box q" x="295" y="162" width="200" height="36"/>
+  <text class="flow-label q-label" x="395" y="185" text-anchor="middle">Colonne utile au lecteur ?</text>
+  <path class="flow-line" d="M395 198 V225 M330 225 H460 M330 225 V276 M460 225 V276"/>
+  <rect class="edge-chip" x="310" y="244" width="40" height="18"/>
+  <text class="edge-text" x="330" y="257">non</text>
+  <rect class="edge-chip" x="412" y="244" width="96" height="18"/>
+  <text class="edge-text" x="460" y="257">oui, masquée</text>
+
+  <!-- Feuilles -->
+  <g>
+    <polygon class="flow-arrow" points="66,276 74,276 70,282"/>
+    <polygon class="flow-arrow" points="196,276 204,276 200,282"/>
+    <polygon class="flow-arrow" points="326,276 334,276 330,282"/>
+    <polygon class="flow-arrow" points="456,276 464,276 460,282"/>
+    <polygon class="flow-arrow" points="586,276 594,276 590,282"/>
+    <polygon class="flow-arrow" points="716,276 724,276 720,282"/>
+  </g>
+  <rect class="flow-box leaf" x="8" y="282" width="124" height="40"/>
+  <text class="flow-label leaf-label" x="70" y="307" text-anchor="middle">Tokenisation</text>
+  <rect class="flow-box leaf" x="138" y="282" width="124" height="40"/>
+  <text class="flow-label leaf-label" x="200" y="307" text-anchor="middle">Généraliser</text>
+  <rect class="flow-box leaf" x="268" y="282" width="124" height="40"/>
+  <text class="flow-label leaf-label" x="330" y="307" text-anchor="middle">Policy tag</text>
+  <rect class="flow-box leaf" x="398" y="282" width="124" height="40"/>
+  <text class="flow-label leaf-label" x="460" y="307" text-anchor="middle">Masquage</text>
+  <rect class="flow-box leaf" x="528" y="282" width="124" height="40"/>
+  <text class="flow-label leaf-label" x="590" y="307" text-anchor="middle">Accès lignes</text>
+  <rect class="flow-box leaf" x="658" y="282" width="124" height="40"/>
+  <text class="flow-label leaf-label" x="720" y="307" text-anchor="middle">Vue autorisée</text>
+</svg>

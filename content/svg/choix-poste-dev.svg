@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 352" role="img" aria-label="Arbre de décision pour choisir où tourne le poste de développement : Cloud Shell, poste local ou Cloud Workstations">
+  <!-- Niveau 1 : usage -->
+  <rect class="flow-box q" x="300" y="22" width="200" height="36"/>
+  <text class="flow-label q-label" x="400" y="45" text-anchor="middle">Quel usage ?</text>
+  <path class="flow-line" d="M400 58 V95 M140 95 H560 M140 95 V276 M560 95 V156"/>
+  <rect class="edge-chip" x="76" y="116" width="128" height="18"/>
+  <text class="edge-text" x="140" y="129">ponctuel, dépannage</text>
+  <rect class="edge-chip" x="482" y="116" width="156" height="18"/>
+  <text class="edge-text" x="560" y="129">développement quotidien</text>
+  <polygon class="flow-arrow" points="556,156 564,156 560,162"/>
+
+  <!-- Niveau 2 : contraintes -->
+  <rect class="flow-box q" x="460" y="162" width="200" height="36"/>
+  <text class="flow-label q-label" x="560" y="185" text-anchor="middle">Contraintes ?</text>
+  <path class="flow-line" d="M560 198 V225 M430 225 H690 M430 225 V276 M690 225 V276"/>
+  <rect class="edge-chip" x="400" y="244" width="60" height="18"/>
+  <text class="edge-text" x="430" y="257">aucune</text>
+  <rect class="edge-chip" x="602" y="244" width="176" height="18"/>
+  <text class="edge-text" x="690" y="257">VPC privé, conformité, GPU</text>
+
+  <!-- Feuilles -->
+  <polygon class="flow-arrow" points="136,276 144,276 140,282"/>
+  <polygon class="flow-arrow" points="426,276 434,276 430,282"/>
+  <polygon class="flow-arrow" points="686,276 694,276 690,282"/>
+  <rect class="flow-box leaf" x="50" y="282" width="180" height="40"/>
+  <text class="flow-label leaf-label" x="140" y="307" text-anchor="middle">Cloud Shell</text>
+  <rect class="flow-box leaf" x="340" y="282" width="180" height="40"/>
+  <text class="flow-label leaf-label" x="430" y="307" text-anchor="middle">Poste local</text>
+  <rect class="flow-box leaf" x="600" y="282" width="180" height="40"/>
+  <text class="flow-label leaf-label" x="690" y="307" text-anchor="middle">Cloud Workstations</text>
+
+  <!-- Précisions -->
+  <text class="edge-text" x="140" y="340">gratuit, 50 h par semaine</text>
+  <text class="edge-text" x="430" y="340">gcloud CLI, ADC, émulateurs</text>
+  <text class="edge-text" x="690" y="340">VM dans le VPC, image commune</text>
+</svg>

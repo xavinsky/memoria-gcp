@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 352" role="img" aria-label="Quatre modèles de reprise d'activité entre une région principale et une région de secours, du moins cher au plus rapide : sauvegarde et restauration, veille tiède, veille chaude, actif-actif">
+  <!-- Titres des modèles -->
+  <rect class="flow-box q" x="12" y="10" width="182" height="46"/>
+  <text class="flow-label q-label" x="103" y="30" text-anchor="middle">Sauvegarde, restauration</text>
+  <text class="edge-text" x="103" y="47">froid</text>
+  <rect class="flow-box q" x="210" y="10" width="182" height="46"/>
+  <text class="flow-label q-label" x="301" y="30" text-anchor="middle">Veille tiède</text>
+  <text class="edge-text" x="301" y="47">tiède</text>
+  <rect class="flow-box q" x="408" y="10" width="182" height="46"/>
+  <text class="flow-label q-label" x="499" y="30" text-anchor="middle">Veille chaude</text>
+  <text class="edge-text" x="499" y="47">chaud, actif-passif</text>
+  <rect class="flow-box q" x="606" y="10" width="182" height="46"/>
+  <text class="flow-label q-label" x="697" y="30" text-anchor="middle">Actif-actif</text>
+  <text class="edge-text" x="697" y="47">chaud, multirégion</text>
+
+  <!-- Région principale : sert le trafic dans les quatre modèles -->
+  <rect class="flow-box leaf" x="12" y="72" width="182" height="58"/>
+  <text class="flow-label leaf-label" x="103" y="95" text-anchor="middle">Région A</text>
+  <text class="edge-text" x="103" y="116">pile complète, trafic</text>
+  <rect class="flow-box leaf" x="210" y="72" width="182" height="58"/>
+  <text class="flow-label leaf-label" x="301" y="95" text-anchor="middle">Région A</text>
+  <text class="edge-text" x="301" y="116">pile complète, trafic</text>
+  <rect class="flow-box leaf" x="408" y="72" width="182" height="58"/>
+  <text class="flow-label leaf-label" x="499" y="95" text-anchor="middle">Région A</text>
+  <text class="edge-text" x="499" y="116">pile complète, trafic</text>
+  <rect class="flow-box leaf" x="606" y="72" width="182" height="58"/>
+  <text class="flow-label leaf-label" x="697" y="95" text-anchor="middle">Région A</text>
+  <text class="edge-text" x="697" y="116">pile complète, trafic</text>
+
+  <!-- Liaisons A vers B -->
+  <path class="flow-line" d="M103 130 V186 M301 130 V186 M499 130 V186 M697 130 V186"/>
+  <rect class="edge-chip" x="43" y="149" width="120" height="18"/>
+  <text class="edge-text" x="103" y="162">copie planifiée</text>
+  <rect class="edge-chip" x="235" y="149" width="132" height="18"/>
+  <text class="edge-text" x="301" y="162">réplication async</text>
+  <rect class="edge-chip" x="433" y="149" width="132" height="18"/>
+  <text class="edge-text" x="499" y="162">réplication async</text>
+  <rect class="edge-chip" x="631" y="149" width="132" height="18"/>
+  <text class="edge-text" x="697" y="162">sync ou async</text>
+  <polygon class="flow-arrow" points="99,186 107,186 103,192"/>
+  <polygon class="flow-arrow" points="297,186 305,186 301,192"/>
+  <polygon class="flow-arrow" points="495,186 503,186 499,192"/>
+  <polygon class="flow-arrow" points="693,186 701,186 697,192"/>
+
+  <!-- Région de secours : ce qui y tourne avant l'incident -->
+  <rect class="flow-box" x="12" y="192" width="182" height="58"/>
+  <text class="flow-label" x="103" y="215" text-anchor="middle">Région B</text>
+  <text class="edge-text" x="103" y="236">sauvegardes, code IaC</text>
+  <rect class="flow-box" x="210" y="192" width="182" height="58"/>
+  <text class="flow-label" x="301" y="215" text-anchor="middle">Région B</text>
+  <text class="edge-text" x="301" y="236">base réplique, calcul à 0</text>
+  <rect class="flow-box" x="408" y="192" width="182" height="58"/>
+  <text class="flow-label" x="499" y="215" text-anchor="middle">Région B</text>
+  <text class="edge-text" x="499" y="236">pile complète, en attente</text>
+  <rect class="flow-box leaf" x="606" y="192" width="182" height="58"/>
+  <text class="flow-label leaf-label" x="697" y="215" text-anchor="middle">Région B</text>
+  <text class="edge-text" x="697" y="236">pile complète, trafic</text>
+
+  <!-- Objectifs de reprise, ordres de grandeur -->
+  <text class="edge-text" x="103" y="274">RPO : heures à 1 jour</text>
+  <text class="edge-text" x="103" y="292">RTO : heures à jours</text>
+  <text class="edge-text" x="301" y="274">RPO : minutes</text>
+  <text class="edge-text" x="301" y="292">RTO : 1 heure à 1 jour</text>
+  <text class="edge-text" x="499" y="274">RPO : secondes à minutes</text>
+  <text class="edge-text" x="499" y="292">RTO : minutes</text>
+  <text class="edge-text" x="697" y="274">RPO : nul si synchrone</text>
+  <text class="edge-text" x="697" y="292">RTO : quasi nul</text>
+
+  <!-- Axe du coût -->
+  <path class="flow-line" d="M12 326 H782"/>
+  <polygon class="flow-arrow" points="782,322 782,330 788,326"/>
+  <rect class="edge-chip" x="290" y="317" width="220" height="18"/>
+  <text class="edge-text" x="400" y="330">coût et complexité croissants</text>
+</svg>

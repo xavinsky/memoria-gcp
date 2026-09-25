@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 322" role="img" aria-label="Un agent ADK consomme des outils par MCP (serveurs distants Google, MCP Toolbox, serveur local) et dialogue avec d'autres agents par A2A ; il est lui-même exposé en A2A">
+  <!-- Liaisons -->
+  <path class="flow-line" d="M180 118 H230 M180 218 H230"/>
+  <path class="flow-line" d="M410 110 H520 M520 35 V155 M520 35 H600 M520 95 H600 M520 155 H600"/>
+  <path class="flow-line" d="M410 235 H520 M520 225 V285 M520 225 H600 M520 285 H600"/>
+
+  <!-- Pastilles -->
+  <rect class="edge-chip" x="420" y="101" width="90" height="18"/>
+  <text class="edge-text" x="465" y="114">MCP : outils</text>
+  <rect class="edge-chip" x="420" y="226" width="90" height="18"/>
+  <text class="edge-text" x="465" y="239">A2A : agents</text>
+
+  <!-- Flèches -->
+  <polygon class="flow-arrow" points="224,114 224,122 230,118"/>
+  <polygon class="flow-arrow" points="224,214 224,222 230,218"/>
+  <polygon class="flow-arrow" points="594,31 594,39 600,35"/>
+  <polygon class="flow-arrow" points="594,91 594,99 600,95"/>
+  <polygon class="flow-arrow" points="594,151 594,159 600,155"/>
+  <polygon class="flow-arrow" points="594,221 594,229 600,225"/>
+  <polygon class="flow-arrow" points="594,281 594,289 600,285"/>
+
+  <!-- Appelants -->
+  <rect class="flow-box" x="10" y="90" width="170" height="56"/>
+  <text class="flow-label" x="95" y="114" text-anchor="middle">Application</text>
+  <text class="edge-text" x="95" y="132">utilisateur, adk web</text>
+  <rect class="flow-box" x="10" y="190" width="170" height="56"/>
+  <text class="flow-label" x="95" y="214" text-anchor="middle">Client A2A</text>
+  <text class="edge-text" x="95" y="232">Gemini Enterprise, agent</text>
+
+  <!-- Agent -->
+  <rect class="flow-box q" x="230" y="80" width="180" height="170"/>
+  <text class="flow-label q-label" x="320" y="128" text-anchor="middle">Agent ADK</text>
+  <text class="edge-text" x="320" y="156">McpToolset</text>
+  <text class="edge-text" x="320" y="178">RemoteA2aAgent</text>
+  <text class="edge-text" x="320" y="200">to_a2a() : serveur A2A</text>
+
+  <!-- Serveurs MCP -->
+  <rect class="flow-box" x="600" y="10" width="190" height="50"/>
+  <text class="flow-label" x="695" y="31" text-anchor="middle">MCP distant Google</text>
+  <text class="edge-text" x="695" y="49">SERVICE.googleapis.com/mcp</text>
+  <rect class="flow-box" x="600" y="70" width="190" height="50"/>
+  <text class="flow-label" x="695" y="91" text-anchor="middle">MCP Toolbox</text>
+  <text class="edge-text" x="695" y="109">SQL déclaré en YAML</text>
+  <rect class="flow-box" x="600" y="130" width="190" height="50"/>
+  <text class="flow-label" x="695" y="151" text-anchor="middle">Serveur MCP local</text>
+  <text class="edge-text" x="695" y="169">stdio, même hôte</text>
+
+  <!-- Agents pairs -->
+  <rect class="flow-box leaf" x="600" y="200" width="190" height="50"/>
+  <text class="flow-label leaf-label" x="695" y="221" text-anchor="middle">Agent distant</text>
+  <text class="edge-text" x="695" y="239">carte d'agent, tâches</text>
+  <rect class="flow-box leaf" x="600" y="260" width="190" height="50"/>
+  <text class="flow-label leaf-label" x="695" y="281" text-anchor="middle">Agent partenaire</text>
+  <text class="edge-text" x="695" y="299">LangGraph, CrewAI…</text>
+</svg>

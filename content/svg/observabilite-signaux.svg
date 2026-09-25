@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 296" role="img" aria-label="Signaux d'observabilité : Compute Engine, GKE et services managés envoient métriques, journaux et traces à Cloud Monitoring, Cloud Logging et Cloud Trace, qui alimentent alertes, tableaux de bord, Error Reporting et l'analyse SQL">
+  <!-- Liaisons -->
+  <path class="flow-line" d="M160 58 H300 M160 158 H300 M160 258 H300 M230 58 V258"/>
+  <path class="flow-line" d="M385 130 V86"/>
+  <path class="flow-line" d="M470 58 H545 M545 33 V95 M545 33 H620 M545 95 H620"/>
+  <path class="flow-line" d="M470 158 H620 M520 158 V258"/>
+  <path class="flow-line" d="M470 258 H620"/>
+
+  <!-- Pastilles -->
+  <rect class="edge-chip" x="200" y="99" width="60" height="18"/>
+  <text class="edge-text" x="230" y="112">OTLP</text>
+  <rect class="edge-chip" x="323" y="99" width="124" height="18"/>
+  <text class="edge-text" x="385" y="112">métrique de journal</text>
+  <rect class="edge-chip" x="532" y="149" width="80" height="18"/>
+  <text class="edge-text" x="572" y="162">exceptions</text>
+  <rect class="edge-chip" x="532" y="249" width="80" height="18"/>
+  <text class="edge-text" x="572" y="262">SQL</text>
+
+  <!-- Flèches -->
+  <polygon class="flow-arrow" points="294,54 294,62 300,58"/>
+  <polygon class="flow-arrow" points="294,154 294,162 300,158"/>
+  <polygon class="flow-arrow" points="294,254 294,262 300,258"/>
+  <polygon class="flow-arrow" points="381,92 389,92 385,86"/>
+  <polygon class="flow-arrow" points="614,29 614,37 620,33"/>
+  <polygon class="flow-arrow" points="614,91 614,99 620,95"/>
+  <polygon class="flow-arrow" points="614,154 614,162 620,158"/>
+  <polygon class="flow-arrow" points="614,254 614,262 620,258"/>
+
+  <!-- Sources -->
+  <rect class="flow-box" x="10" y="30" width="150" height="56"/>
+  <text class="flow-label" x="85" y="54" text-anchor="middle">Compute Engine</text>
+  <text class="edge-text" x="85" y="72">agent Ops</text>
+
+  <rect class="flow-box" x="10" y="130" width="150" height="56"/>
+  <text class="flow-label" x="85" y="154" text-anchor="middle">GKE</text>
+  <text class="edge-text" x="85" y="172">Prometheus managé</text>
+
+  <rect class="flow-box" x="10" y="230" width="150" height="56"/>
+  <text class="flow-label" x="85" y="254" text-anchor="middle">Services managés</text>
+  <text class="edge-text" x="85" y="272">Cloud Run, Cloud SQL</text>
+
+  <!-- Magasins -->
+  <rect class="flow-box q" x="300" y="30" width="170" height="56"/>
+  <text class="flow-label q-label" x="385" y="54" text-anchor="middle">Cloud Monitoring</text>
+  <text class="edge-text" x="385" y="72">métriques, SLO</text>
+
+  <rect class="flow-box q" x="300" y="130" width="170" height="56"/>
+  <text class="flow-label q-label" x="385" y="154" text-anchor="middle">Cloud Logging</text>
+  <text class="edge-text" x="385" y="172">journaux, routeur</text>
+
+  <rect class="flow-box q" x="300" y="230" width="170" height="56"/>
+  <text class="flow-label q-label" x="385" y="254" text-anchor="middle">Cloud Trace</text>
+  <text class="edge-text" x="385" y="272">spans, 30 jours</text>
+
+  <!-- Usages -->
+  <rect class="flow-box leaf" x="620" y="8" width="172" height="50"/>
+  <text class="flow-label leaf-label" x="706" y="29" text-anchor="middle">Alertes</text>
+  <text class="edge-text" x="706" y="47">règles, burn rate</text>
+
+  <rect class="flow-box leaf" x="620" y="70" width="172" height="50"/>
+  <text class="flow-label leaf-label" x="706" y="91" text-anchor="middle">Tableaux de bord</text>
+  <text class="edge-text" x="706" y="109">Monitoring, Grafana</text>
+
+  <rect class="flow-box leaf" x="620" y="133" width="172" height="50"/>
+  <text class="flow-label leaf-label" x="706" y="154" text-anchor="middle">Error Reporting</text>
+  <text class="edge-text" x="706" y="172">groupes d'erreurs</text>
+
+  <rect class="flow-box leaf" x="620" y="233" width="172" height="50"/>
+  <text class="flow-label leaf-label" x="706" y="254" text-anchor="middle">Analyse SQL</text>
+  <text class="edge-text" x="706" y="272">Observability Analytics</text>
+</svg>

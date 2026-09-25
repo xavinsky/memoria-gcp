@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 376" role="img" aria-label="Évaluation d'un appel par IAM : frontière d'accès du principal, puis stratégies de refus, puis stratégies d'autorisation, héritées de l'organisation jusqu'à la ressource">
+  <!-- Chaîne d'évaluation : liaisons -->
+  <path class="flow-line" d="M150 58 V84 M150 136 V162 M150 214 V240 M150 292 V318"/>
+  <path class="flow-line" d="M280 113 H324 M280 191 H324 M280 269 H324"/>
+
+  <!-- Pastilles -->
+  <rect class="edge-chip" x="133" y="140" width="34" height="18"/>
+  <text class="edge-text" x="150" y="153">oui</text>
+  <rect class="edge-chip" x="133" y="218" width="34" height="18"/>
+  <text class="edge-text" x="150" y="231">non</text>
+  <rect class="edge-chip" x="133" y="296" width="34" height="18"/>
+  <text class="edge-text" x="150" y="309">oui</text>
+  <rect class="edge-chip" x="285" y="104" width="34" height="18"/>
+  <text class="edge-text" x="302" y="117">non</text>
+  <rect class="edge-chip" x="285" y="182" width="34" height="18"/>
+  <text class="edge-text" x="302" y="195">oui</text>
+  <rect class="edge-chip" x="285" y="260" width="34" height="18"/>
+  <text class="edge-text" x="302" y="273">non</text>
+
+  <!-- Flèches -->
+  <polygon class="flow-arrow" points="146,84 154,84 150,90"/>
+  <polygon class="flow-arrow" points="146,162 154,162 150,168"/>
+  <polygon class="flow-arrow" points="146,240 154,240 150,246"/>
+  <polygon class="flow-arrow" points="146,318 154,318 150,324"/>
+  <polygon class="flow-arrow" points="324,109 324,117 330,113"/>
+  <polygon class="flow-arrow" points="324,187 324,195 330,191"/>
+  <polygon class="flow-arrow" points="324,265 324,273 330,269"/>
+
+  <!-- Nœuds de la chaîne -->
+  <rect class="flow-box" x="20" y="12" width="260" height="46"/>
+  <text class="flow-label" x="150" y="32" text-anchor="middle">Appel d'API</text>
+  <text class="edge-text" x="150" y="49">principal, permission, ressource</text>
+
+  <rect class="flow-box q" x="20" y="90" width="260" height="46"/>
+  <text class="flow-label q-label" x="150" y="110" text-anchor="middle">Principal éligible ?</text>
+  <text class="edge-text" x="150" y="127">Principal Access Boundary</text>
+
+  <rect class="flow-box q" x="20" y="168" width="260" height="46"/>
+  <text class="flow-label q-label" x="150" y="188" text-anchor="middle">Permission refusée ?</text>
+  <text class="edge-text" x="150" y="205">stratégies de refus</text>
+
+  <rect class="flow-box q" x="20" y="246" width="260" height="46"/>
+  <text class="flow-label q-label" x="150" y="266" text-anchor="middle">Un rôle l'accorde ?</text>
+  <text class="edge-text" x="150" y="283">stratégies d'autorisation</text>
+
+  <rect class="flow-box leaf" x="20" y="324" width="260" height="40"/>
+  <text class="flow-label leaf-label" x="150" y="349" text-anchor="middle">Accès accordé</text>
+
+  <rect class="flow-box" x="330" y="93" width="120" height="40"/>
+  <text class="flow-label" x="390" y="118" text-anchor="middle">Bloqué</text>
+  <rect class="flow-box" x="330" y="171" width="120" height="40"/>
+  <text class="flow-label" x="390" y="196" text-anchor="middle">Refusé</text>
+  <rect class="flow-box" x="330" y="249" width="120" height="40"/>
+  <text class="flow-label" x="390" y="274" text-anchor="middle">Refusé</text>
+
+  <!-- Hiérarchie : d'où viennent les stratégies -->
+  <path class="flow-line" d="M650 58 V84 M650 136 V162 M650 214 V240 M650 292 V318"/>
+  <rect class="edge-chip" x="620" y="62" width="60" height="18"/>
+  <text class="edge-text" x="650" y="75">hérite</text>
+  <rect class="edge-chip" x="620" y="140" width="60" height="18"/>
+  <text class="edge-text" x="650" y="153">hérite</text>
+  <rect class="edge-chip" x="620" y="218" width="60" height="18"/>
+  <text class="edge-text" x="650" y="231">hérite</text>
+  <polygon class="flow-arrow" points="646,84 654,84 650,90"/>
+  <polygon class="flow-arrow" points="646,162 654,162 650,168"/>
+  <polygon class="flow-arrow" points="646,240 654,240 650,246"/>
+  <polygon class="flow-arrow" points="646,318 654,318 650,324"/>
+
+  <rect class="flow-box" x="520" y="12" width="260" height="46"/>
+  <text class="flow-label" x="650" y="32" text-anchor="middle">Organisation</text>
+  <text class="edge-text" x="650" y="49">refus, autorisations</text>
+  <rect class="flow-box" x="520" y="90" width="260" height="46"/>
+  <text class="flow-label" x="650" y="110" text-anchor="middle">Dossiers</text>
+  <text class="edge-text" x="650" y="127">refus, autorisations</text>
+  <rect class="flow-box" x="520" y="168" width="260" height="46"/>
+  <text class="flow-label" x="650" y="188" text-anchor="middle">Projet</text>
+  <text class="edge-text" x="650" y="205">refus, autorisations</text>
+  <rect class="flow-box" x="520" y="246" width="260" height="46"/>
+  <text class="flow-label" x="650" y="266" text-anchor="middle">Ressource</text>
+  <text class="edge-text" x="650" y="283">autorisations seulement</text>
+  <rect class="flow-box leaf" x="520" y="324" width="260" height="40"/>
+  <text class="flow-label leaf-label" x="650" y="349" text-anchor="middle">Union des autorisations</text>
+</svg>

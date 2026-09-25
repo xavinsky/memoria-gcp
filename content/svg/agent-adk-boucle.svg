@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 316" role="img" aria-label="Boucle d'un agent ADK : l'utilisateur envoie un message, l'agent consulte le modèle, exécute les outils choisis, garde l'historique en session et délègue à des sous-agents">
+  <!-- Liaisons -->
+  <path class="flow-line" d="M130 160 H250"/>
+  <path class="flow-line" d="M340 76 V120"/>
+  <path class="flow-line" d="M430 160 H560"/>
+  <path class="flow-line" d="M340 200 V250"/>
+  <path class="flow-line" d="M430 188 H470 V226 H740 M524 226 V250 M632 226 V250 M740 226 V250"/>
+
+  <!-- Pastilles -->
+  <rect class="edge-chip" x="158" y="151" width="64" height="18"/>
+  <text class="edge-text" x="190" y="164">message</text>
+  <rect class="edge-chip" x="255" y="89" width="170" height="18"/>
+  <text class="edge-text" x="340" y="102">contexte ↔ réponse ou appel</text>
+  <rect class="edge-chip" x="440" y="151" width="110" height="18"/>
+  <text class="edge-text" x="495" y="164">appel, résultat</text>
+  <rect class="edge-chip" x="280" y="216" width="120" height="18"/>
+  <text class="edge-text" x="340" y="229">événements, état</text>
+  <rect class="edge-chip" x="538" y="217" width="80" height="18"/>
+  <text class="edge-text" x="578" y="230">délégation</text>
+
+  <!-- Flèches -->
+  <polygon class="flow-arrow" points="244,156 244,164 250,160"/>
+  <polygon class="flow-arrow" points="336,82 344,82 340,76"/>
+  <polygon class="flow-arrow" points="336,114 344,114 340,120"/>
+  <polygon class="flow-arrow" points="554,156 554,164 560,160"/>
+  <polygon class="flow-arrow" points="436,156 436,164 430,160"/>
+  <polygon class="flow-arrow" points="336,244 344,244 340,250"/>
+  <polygon class="flow-arrow" points="336,206 344,206 340,200"/>
+  <polygon class="flow-arrow" points="520,244 528,244 524,250"/>
+  <polygon class="flow-arrow" points="628,244 636,244 632,250"/>
+  <polygon class="flow-arrow" points="736,244 744,244 740,250"/>
+
+  <!-- Nœuds -->
+  <rect class="flow-box" x="10" y="132" width="120" height="56"/>
+  <text class="flow-label" x="70" y="156" text-anchor="middle">Utilisateur</text>
+  <text class="edge-text" x="70" y="174">app, adk web</text>
+
+  <rect class="flow-box" x="250" y="20" width="180" height="56"/>
+  <text class="flow-label" x="340" y="44" text-anchor="middle">Modèle Gemini</text>
+  <text class="edge-text" x="340" y="62">répond ou choisit un outil</text>
+
+  <rect class="flow-box q" x="250" y="120" width="180" height="80"/>
+  <text class="flow-label q-label" x="340" y="148" text-anchor="middle">Agent (LlmAgent)</text>
+  <text class="edge-text" x="340" y="167">instructions, outils</text>
+  <text class="edge-text" x="340" y="185">exécuté par le Runner</text>
+
+  <rect class="flow-box" x="560" y="132" width="200" height="56"/>
+  <text class="flow-label" x="660" y="156" text-anchor="middle">Outils</text>
+  <text class="edge-text" x="660" y="174">fonction, MCP, OpenAPI</text>
+
+  <rect class="flow-box" x="250" y="250" width="180" height="56"/>
+  <text class="flow-label" x="340" y="274" text-anchor="middle">Session</text>
+  <text class="edge-text" x="340" y="292">historique, état, mémoire</text>
+
+  <rect class="flow-box leaf" x="472" y="250" width="104" height="56"/>
+  <text class="flow-label leaf-label" x="524" y="274" text-anchor="middle">Sous-agent</text>
+  <text class="edge-text" x="524" y="292">même processus</text>
+  <rect class="flow-box leaf" x="580" y="250" width="104" height="56"/>
+  <text class="flow-label leaf-label" x="632" y="274" text-anchor="middle">Workflow</text>
+  <text class="edge-text" x="632" y="292">graphe, étapes</text>
+  <rect class="flow-box leaf" x="688" y="250" width="104" height="56"/>
+  <text class="flow-label leaf-label" x="740" y="274" text-anchor="middle">Agent A2A</text>
+  <text class="edge-text" x="740" y="292">service distant</text>
+</svg>

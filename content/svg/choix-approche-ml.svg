@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 334" role="img" aria-label="Arbre de décision pour choisir une approche de machine learning">
+  <!-- Niveau 1 : nature de la tâche -->
+  <rect class="flow-box q" x="300" y="22" width="200" height="36"/>
+  <text class="flow-label q-label" x="400" y="45" text-anchor="middle">Nature de la tâche ?</text>
+  <path class="flow-line" d="M400 58 V95 M70 95 H590 M70 95 V276 M265 95 V156 M590 95 V156"/>
+  <rect class="edge-chip" x="22" y="116" width="96" height="18"/>
+  <text class="edge-text" x="70" y="129">tâche standard</text>
+  <rect class="edge-chip" x="210" y="116" width="110" height="18"/>
+  <text class="edge-text" x="265" y="129">question ouverte</text>
+  <rect class="edge-chip" x="514" y="116" width="152" height="18"/>
+  <text class="edge-text" x="590" y="129">prédire sur ses données</text>
+  <polygon class="flow-arrow" points="261,156 269,156 265,162"/>
+  <polygon class="flow-arrow" points="586,156 594,156 590,162"/>
+
+  <!-- Niveau 2 : génératif -->
+  <rect class="flow-box q" x="175" y="162" width="180" height="36"/>
+  <text class="flow-label q-label" x="265" y="185" text-anchor="middle">Le prompt suffit ?</text>
+  <path class="flow-line" d="M265 198 V225 M200 225 H330 M200 225 V276 M330 225 V276"/>
+  <rect class="edge-chip" x="182" y="244" width="36" height="18"/>
+  <text class="edge-text" x="200" y="257">oui</text>
+  <rect class="edge-chip" x="278" y="244" width="104" height="18"/>
+  <text class="edge-text" x="330" y="257">non, exemples</text>
+
+  <!-- Niveau 2 : prédiction -->
+  <rect class="flow-box q" x="500" y="162" width="180" height="36"/>
+  <text class="flow-label q-label" x="590" y="185" text-anchor="middle">Qui construit ?</text>
+  <path class="flow-line" d="M590 198 V225 M460 225 H720 M460 225 V276 M590 225 V276 M720 225 V276"/>
+  <rect class="edge-chip" x="408" y="244" width="104" height="18"/>
+  <text class="edge-text" x="460" y="257">SQL, données BQ</text>
+  <rect class="edge-chip" x="545" y="244" width="90" height="18"/>
+  <text class="edge-text" x="590" y="257">sans code ML</text>
+  <rect class="edge-chip" x="676" y="244" width="88" height="18"/>
+  <text class="edge-text" x="720" y="257">code Python</text>
+
+  <!-- Feuilles -->
+  <g>
+    <polygon class="flow-arrow" points="66,276 74,276 70,282"/>
+    <polygon class="flow-arrow" points="196,276 204,276 200,282"/>
+    <polygon class="flow-arrow" points="326,276 334,276 330,282"/>
+    <polygon class="flow-arrow" points="456,276 464,276 460,282"/>
+    <polygon class="flow-arrow" points="586,276 594,276 590,282"/>
+    <polygon class="flow-arrow" points="716,276 724,276 720,282"/>
+  </g>
+  <rect class="flow-box leaf" x="8" y="282" width="124" height="40"/>
+  <text class="flow-label leaf-label" x="70" y="307" text-anchor="middle">API ML</text>
+  <rect class="flow-box leaf" x="138" y="282" width="124" height="40"/>
+  <text class="flow-label leaf-label" x="200" y="307" text-anchor="middle">Prompt Gemini</text>
+  <rect class="flow-box leaf" x="268" y="282" width="124" height="40"/>
+  <text class="flow-label leaf-label" x="330" y="307" text-anchor="middle">Réglage Gemini</text>
+  <rect class="flow-box leaf" x="398" y="282" width="124" height="40"/>
+  <text class="flow-label leaf-label" x="460" y="307" text-anchor="middle">BigQuery ML</text>
+  <rect class="flow-box leaf" x="528" y="282" width="124" height="40"/>
+  <text class="flow-label leaf-label" x="590" y="307" text-anchor="middle">AutoML</text>
+  <rect class="flow-box leaf" x="658" y="282" width="124" height="40"/>
+  <text class="flow-label leaf-label" x="720" y="307" text-anchor="middle">Code maison</text>
+</svg>

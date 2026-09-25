@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" role="img" aria-label="Architecture de production d'un agent : utilisateurs, Gemini Enterprise ou interface sur Cloud Run, Agent Runtime, puis modèle, sessions, Agent Gateway, réseau privé et observabilité ; déploiement par la CI/CD">
+  <!-- Liaisons -->
+  <path class="flow-line" d="M135 84 H165 M135 194 H165"/>
+  <path class="flow-line" d="M315 84 H345 M315 194 H345"/>
+  <path class="flow-line" d="M505 145 H525 M525 34 V274 M525 34 H545 M525 94 H545 M525 154 H545 M525 214 H545 M525 274 H545"/>
+  <path class="flow-line" d="M425 262 V220"/>
+
+  <!-- Flèches -->
+  <polygon class="flow-arrow" points="159,80 159,88 165,84"/>
+  <polygon class="flow-arrow" points="159,190 159,198 165,194"/>
+  <polygon class="flow-arrow" points="339,80 339,88 345,84"/>
+  <polygon class="flow-arrow" points="339,190 339,198 345,194"/>
+  <polygon class="flow-arrow" points="539,30 539,38 545,34"/>
+  <polygon class="flow-arrow" points="539,90 539,98 545,94"/>
+  <polygon class="flow-arrow" points="539,150 539,158 545,154"/>
+  <polygon class="flow-arrow" points="539,210 539,218 545,214"/>
+  <polygon class="flow-arrow" points="539,270 539,278 545,274"/>
+  <polygon class="flow-arrow" points="421,226 429,226 425,220"/>
+
+  <!-- Utilisateurs -->
+  <rect class="flow-box" x="10" y="60" width="125" height="48"/>
+  <text class="flow-label" x="72" y="81" text-anchor="middle">Salariés</text>
+  <text class="edge-text" x="72" y="98">web, mobile</text>
+  <rect class="flow-box" x="10" y="170" width="125" height="48"/>
+  <text class="flow-label" x="72" y="191" text-anchor="middle">Clients</text>
+  <text class="edge-text" x="72" y="208">site, application</text>
+
+  <!-- Points d'entrée -->
+  <rect class="flow-box" x="165" y="60" width="150" height="48"/>
+  <text class="flow-label" x="240" y="81" text-anchor="middle">Gemini Enterprise</text>
+  <text class="edge-text" x="240" y="98">agent enregistré</text>
+  <rect class="flow-box" x="165" y="170" width="150" height="48"/>
+  <text class="flow-label" x="240" y="191" text-anchor="middle">Cloud Run</text>
+  <text class="edge-text" x="240" y="208">UI maison, API</text>
+
+  <!-- Runtime -->
+  <rect class="flow-box q" x="345" y="70" width="160" height="150"/>
+  <text class="flow-label q-label" x="425" y="108" text-anchor="middle">Agent Runtime</text>
+  <text class="edge-text" x="425" y="134">agent ADK</text>
+  <text class="edge-text" x="425" y="154">identité d'agent</text>
+  <text class="edge-text" x="425" y="174">Model Armor (plugin)</text>
+  <text class="edge-text" x="425" y="194">min, max instances</text>
+
+  <rect class="flow-box" x="345" y="262" width="160" height="48"/>
+  <text class="flow-label" x="425" y="283" text-anchor="middle">CI/CD</text>
+  <text class="edge-text" x="425" y="300">adk deploy, agents-cli</text>
+
+  <!-- Dépendances -->
+  <rect class="flow-box leaf" x="545" y="10" width="245" height="48"/>
+  <text class="flow-label leaf-label" x="667" y="31" text-anchor="middle">Gemini</text>
+  <text class="edge-text" x="667" y="48">modèle, facturé aux jetons</text>
+  <rect class="flow-box" x="545" y="70" width="245" height="48"/>
+  <text class="flow-label" x="667" y="91" text-anchor="middle">Sessions, Memory Bank</text>
+  <text class="edge-text" x="667" y="108">état, mémoire longue</text>
+  <rect class="flow-box" x="545" y="130" width="245" height="48"/>
+  <text class="flow-label" x="667" y="151" text-anchor="middle">Agent Gateway</text>
+  <text class="edge-text" x="667" y="168">MCP, API, autres agents</text>
+  <rect class="flow-box" x="545" y="190" width="245" height="48"/>
+  <text class="flow-label" x="667" y="211" text-anchor="middle">VPC privé (PSC-I)</text>
+  <text class="edge-text" x="667" y="228">bases, API internes</text>
+  <rect class="flow-box" x="545" y="250" width="245" height="48"/>
+  <text class="flow-label" x="667" y="271" text-anchor="middle">Cloud Trace, Logging</text>
+  <text class="edge-text" x="667" y="288">OpenTelemetry</text>
+</svg>

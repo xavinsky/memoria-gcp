@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 334" role="img" aria-label="Arbre de décision pour adapter un modèle génératif : prompting, RAG, réglage supervisé ou par préférence, modèle ouvert">
+  <!-- Niveau 1 : ce qui manque au modèle de base -->
+  <rect class="flow-box q" x="280" y="22" width="240" height="36"/>
+  <text class="flow-label q-label" x="400" y="45" text-anchor="middle">Qu'est-ce qui manque au modèle ?</text>
+  <path class="flow-line" d="M400 58 V95 M72 95 H715 M72 95 V276 M235 95 V276 M480 95 V156 M715 95 V276"/>
+  <rect class="edge-chip" x="16" y="116" width="112" height="18"/>
+  <text class="edge-text" x="72" y="129">rien, à cadrer</text>
+  <rect class="edge-chip" x="181" y="116" width="108" height="18"/>
+  <text class="edge-text" x="235" y="129">connaissances</text>
+  <rect class="edge-chip" x="430" y="116" width="100" height="18"/>
+  <text class="edge-text" x="480" y="129">comportement</text>
+  <rect class="edge-chip" x="650" y="116" width="130" height="18"/>
+  <text class="edge-text" x="715" y="129">maîtrise des poids</text>
+  <polygon class="flow-arrow" points="476,156 484,156 480,162"/>
+
+  <!-- Niveau 2 : réglage de Gemini -->
+  <rect class="flow-box q" x="385" y="162" width="190" height="36"/>
+  <text class="flow-label q-label" x="480" y="185" text-anchor="middle">Réglage : quelles données ?</text>
+  <path class="flow-line" d="M480 198 V225 M405 225 H555 M405 225 V276 M555 225 V276"/>
+  <rect class="edge-chip" x="347" y="244" width="116" height="18"/>
+  <text class="edge-text" x="405" y="257">entrée → sortie</text>
+  <rect class="edge-chip" x="500" y="244" width="110" height="18"/>
+  <text class="edge-text" x="555" y="257">réponse A &gt; B</text>
+
+  <!-- Feuilles -->
+  <g>
+    <polygon class="flow-arrow" points="68,276 76,276 72,282"/>
+    <polygon class="flow-arrow" points="231,276 239,276 235,282"/>
+    <polygon class="flow-arrow" points="401,276 409,276 405,282"/>
+    <polygon class="flow-arrow" points="551,276 559,276 555,282"/>
+    <polygon class="flow-arrow" points="711,276 719,276 715,282"/>
+  </g>
+  <rect class="flow-box leaf" x="6" y="282" width="132" height="40"/>
+  <text class="flow-label leaf-label" x="72" y="307" text-anchor="middle">Prompting</text>
+  <rect class="flow-box leaf" x="167" y="282" width="136" height="40"/>
+  <text class="flow-label leaf-label" x="235" y="307" text-anchor="middle">RAG, ancrage</text>
+  <rect class="flow-box leaf" x="337" y="282" width="136" height="40"/>
+  <text class="flow-label leaf-label" x="405" y="307" text-anchor="middle">Supervisé</text>
+  <rect class="flow-box leaf" x="487" y="282" width="136" height="40"/>
+  <text class="flow-label leaf-label" x="555" y="307" text-anchor="middle">Préférences</text>
+  <rect class="flow-box leaf" x="649" y="282" width="132" height="40"/>
+  <text class="flow-label leaf-label" x="715" y="307" text-anchor="middle">Modèle ouvert</text>
+</svg>

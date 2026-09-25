@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 336" role="img" aria-label="Chaîne d'alerte de coût : l'usage des projets remonte dans Cloud Billing avec retard, le budget compare aux seuils, prévient par e-mail et publie sur Pub/Sub ; une fonction Cloud Run décide de notifier, réduire ou couper la facturation ; les quotas bornent l'usage sans délai">
+  <!-- Liaisons -->
+  <path class="flow-line" d="M130 58 H170"/>
+  <path class="flow-line" d="M320 58 H380"/>
+  <path class="flow-line" d="M530 58 H620"/>
+  <path class="flow-line" d="M455 86 V140"/>
+  <path class="flow-line" d="M530 168 H620"/>
+  <path class="flow-line" d="M705 196 V234 M280 234 H705 M280 234 V268 M480 234 V268"/>
+  <path class="flow-line" d="M70 140 V86"/>
+
+  <!-- Pastilles -->
+  <rect class="edge-chip" x="533" y="49" width="84" height="18"/>
+  <text class="edge-text" x="575" y="62">seuil franchi</text>
+  <rect class="edge-chip" x="389" y="104" width="132" height="18"/>
+  <text class="edge-text" x="455" y="117">plusieurs fois/jour</text>
+  <rect class="edge-chip" x="537" y="159" width="80" height="18"/>
+  <text class="edge-text" x="577" y="172">déclenche</text>
+  <rect class="edge-chip" x="428" y="225" width="104" height="18"/>
+  <text class="edge-text" x="480" y="238">cost &gt; budget</text>
+
+  <!-- Flèches -->
+  <polygon class="flow-arrow" points="164,54 164,62 170,58"/>
+  <polygon class="flow-arrow" points="374,54 374,62 380,58"/>
+  <polygon class="flow-arrow" points="614,54 614,62 620,58"/>
+  <polygon class="flow-arrow" points="451,134 459,134 455,140"/>
+  <polygon class="flow-arrow" points="614,164 614,172 620,168"/>
+  <polygon class="flow-arrow" points="276,262 284,262 280,268"/>
+  <polygon class="flow-arrow" points="476,262 484,262 480,268"/>
+  <polygon class="flow-arrow" points="701,262 709,262 705,268"/>
+  <polygon class="flow-arrow" points="66,92 74,92 70,86"/>
+
+  <!-- Nœuds -->
+  <rect class="flow-box" x="10" y="30" width="120" height="56"/>
+  <text class="flow-label" x="70" y="54" text-anchor="middle">Projets</text>
+  <text class="edge-text" x="70" y="72">usage horaire</text>
+
+  <rect class="flow-box" x="170" y="30" width="150" height="56"/>
+  <text class="flow-label" x="245" y="54" text-anchor="middle">Cloud Billing</text>
+  <text class="edge-text" x="245" y="72">coûts estimés, retard</text>
+
+  <rect class="flow-box" x="380" y="30" width="150" height="56"/>
+  <text class="flow-label" x="455" y="54" text-anchor="middle">Budget</text>
+  <text class="edge-text" x="455" y="72">seuils réel / prévu</text>
+
+  <rect class="flow-box" x="620" y="30" width="170" height="56"/>
+  <text class="flow-label" x="705" y="54" text-anchor="middle">E-mail</text>
+  <text class="edge-text" x="705" y="72">admins, canaux Monitoring</text>
+
+  <rect class="flow-box" x="10" y="140" width="150" height="56"/>
+  <text class="flow-label" x="85" y="164" text-anchor="middle">Quotas, plafonds</text>
+  <text class="edge-text" x="85" y="182">refus immédiat</text>
+
+  <rect class="flow-box" x="380" y="140" width="150" height="56"/>
+  <text class="flow-label" x="455" y="164" text-anchor="middle">Pub/Sub</text>
+  <text class="edge-text" x="455" y="182">sujet FinOps</text>
+
+  <rect class="flow-box q" x="620" y="140" width="170" height="56"/>
+  <text class="flow-label q-label" x="705" y="164" text-anchor="middle">Fonction Cloud Run</text>
+  <text class="edge-text" x="705" y="182">compare, décide</text>
+
+  <rect class="flow-box leaf" x="190" y="268" width="180" height="56"/>
+  <text class="flow-label leaf-label" x="280" y="292" text-anchor="middle">Notifier</text>
+  <text class="edge-text" x="280" y="311">Slack, ticket</text>
+
+  <rect class="flow-box leaf" x="390" y="268" width="180" height="56"/>
+  <text class="flow-label leaf-label" x="480" y="292" text-anchor="middle">Réduire</text>
+  <text class="edge-text" x="480" y="311">arrêt de VM, mise à zéro</text>
+
+  <rect class="flow-box leaf" x="615" y="268" width="180" height="56"/>
+  <text class="flow-label leaf-label" x="705" y="292" text-anchor="middle">Couper le projet</text>
+  <text class="edge-text" x="705" y="311">facturation déliée</text>
+</svg>

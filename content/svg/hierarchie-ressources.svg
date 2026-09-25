@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" role="img" aria-label="Hiérarchie de référence : l'organisation, un dossier d'amorçage, un dossier commun, un dossier réseau, puis un dossier par environnement contenant un projet par application">
+  <!-- Liaisons -->
+  <path class="flow-line" d="M450 62 V82 M76 82 H816 M76 82 V100 M224 82 V100 M372 82 V100 M520 82 V100 M668 82 V100 M816 82 V100"/>
+  <path class="flow-line" d="M12 144 V235 M12 185 H18 M12 235 H18"/>
+  <path class="flow-line" d="M160 144 V285 M160 185 H166 M160 235 H166 M160 285 H166"/>
+  <path class="flow-line" d="M308 144 V285 M308 185 H314 M308 235 H314 M308 285 H314"/>
+  <path class="flow-line" d="M456 144 V285 M456 185 H462 M456 235 H462 M456 285 H462"/>
+  <path class="flow-line" d="M604 144 V285 M604 185 H610 M604 235 H610 M604 285 H610"/>
+  <path class="flow-line" d="M752 144 V285 M752 185 H758 M752 235 H758 M752 285 H758"/>
+
+  <!-- Organisation -->
+  <rect class="flow-box q" x="330" y="12" width="240" height="50"/>
+  <text class="flow-label q-label" x="450" y="33" text-anchor="middle">Organisation</text>
+  <text class="edge-text" x="450" y="51">règles de base, IAM, puits agrégé</text>
+
+  <!-- Dossiers -->
+  <rect class="flow-box" x="6" y="100" width="140" height="44"/>
+  <text class="flow-label" x="76" y="119" text-anchor="middle">Amorçage</text>
+  <text class="edge-text" x="76" y="136">fldr-bootstrap</text>
+  <rect class="flow-box" x="154" y="100" width="140" height="44"/>
+  <text class="flow-label" x="224" y="119" text-anchor="middle">Commun</text>
+  <text class="edge-text" x="224" y="136">fldr-common</text>
+  <rect class="flow-box" x="302" y="100" width="140" height="44"/>
+  <text class="flow-label" x="372" y="119" text-anchor="middle">Réseau</text>
+  <text class="edge-text" x="372" y="136">fldr-network</text>
+  <rect class="flow-box" x="450" y="100" width="140" height="44"/>
+  <text class="flow-label" x="520" y="119" text-anchor="middle">Production</text>
+  <text class="edge-text" x="520" y="136">fldr-production</text>
+  <rect class="flow-box" x="598" y="100" width="140" height="44"/>
+  <text class="flow-label" x="668" y="119" text-anchor="middle">Hors production</text>
+  <text class="edge-text" x="668" y="136">fldr-nonproduction</text>
+  <rect class="flow-box" x="746" y="100" width="140" height="44"/>
+  <text class="flow-label" x="816" y="119" text-anchor="middle">Développement</text>
+  <text class="edge-text" x="816" y="136">fldr-development</text>
+
+  <!-- Projets -->
+  <rect class="flow-box leaf" x="18" y="164" width="128" height="42"/>
+  <text class="flow-label leaf-label" x="82" y="183" text-anchor="middle">Seed</text>
+  <text class="edge-text" x="82" y="199">état, comptes CI</text>
+  <rect class="flow-box leaf" x="18" y="214" width="128" height="42"/>
+  <text class="flow-label leaf-label" x="82" y="233" text-anchor="middle">CI/CD</text>
+  <text class="edge-text" x="82" y="249">pipelines IaC</text>
+  <rect class="flow-box leaf" x="166" y="164" width="128" height="42"/>
+  <text class="flow-label leaf-label" x="230" y="183" text-anchor="middle">Journaux</text>
+  <text class="edge-text" x="230" y="199">puits agrégés</text>
+  <rect class="flow-box leaf" x="166" y="214" width="128" height="42"/>
+  <text class="flow-label leaf-label" x="230" y="233" text-anchor="middle">Facturation</text>
+  <text class="edge-text" x="230" y="249">export BigQuery</text>
+  <rect class="flow-box leaf" x="166" y="264" width="128" height="42"/>
+  <text class="flow-label leaf-label" x="230" y="283" text-anchor="middle">Sécurité</text>
+  <text class="edge-text" x="230" y="299">SCC, clés, secrets</text>
+  <rect class="flow-box leaf" x="314" y="164" width="128" height="42"/>
+  <text class="flow-label leaf-label" x="378" y="183" text-anchor="middle">VPC prod</text>
+  <text class="edge-text" x="378" y="199">hôte Shared VPC</text>
+  <rect class="flow-box leaf" x="314" y="214" width="128" height="42"/>
+  <text class="flow-label leaf-label" x="378" y="233" text-anchor="middle">VPC non-prod</text>
+  <text class="edge-text" x="378" y="249">hôte Shared VPC</text>
+  <rect class="flow-box leaf" x="314" y="264" width="128" height="42"/>
+  <text class="flow-label leaf-label" x="378" y="283" text-anchor="middle">VPC dev</text>
+  <text class="edge-text" x="378" y="299">hôte Shared VPC</text>
+  <rect class="flow-box leaf" x="462" y="164" width="128" height="42"/>
+  <text class="flow-label leaf-label" x="526" y="183" text-anchor="middle">Appli A</text>
+  <text class="edge-text" x="526" y="199">projet de service</text>
+  <rect class="flow-box leaf" x="462" y="214" width="128" height="42"/>
+  <text class="flow-label leaf-label" x="526" y="233" text-anchor="middle">Appli B</text>
+  <text class="edge-text" x="526" y="249">projet de service</text>
+  <rect class="flow-box leaf" x="462" y="264" width="128" height="42"/>
+  <text class="flow-label leaf-label" x="526" y="283" text-anchor="middle">Secrets</text>
+  <text class="edge-text" x="526" y="299">clés et secrets</text>
+  <rect class="flow-box leaf" x="610" y="164" width="128" height="42"/>
+  <text class="flow-label leaf-label" x="674" y="183" text-anchor="middle">Appli A</text>
+  <text class="edge-text" x="674" y="199">projet de service</text>
+  <rect class="flow-box leaf" x="610" y="214" width="128" height="42"/>
+  <text class="flow-label leaf-label" x="674" y="233" text-anchor="middle">Appli B</text>
+  <text class="edge-text" x="674" y="249">projet de service</text>
+  <rect class="flow-box leaf" x="610" y="264" width="128" height="42"/>
+  <text class="flow-label leaf-label" x="674" y="283" text-anchor="middle">Secrets</text>
+  <text class="edge-text" x="674" y="299">clés et secrets</text>
+  <rect class="flow-box leaf" x="758" y="164" width="128" height="42"/>
+  <text class="flow-label leaf-label" x="822" y="183" text-anchor="middle">Appli A</text>
+  <text class="edge-text" x="822" y="199">projet de service</text>
+  <rect class="flow-box leaf" x="758" y="214" width="128" height="42"/>
+  <text class="flow-label leaf-label" x="822" y="233" text-anchor="middle">Appli B</text>
+  <text class="edge-text" x="822" y="249">projet de service</text>
+  <rect class="flow-box leaf" x="758" y="264" width="128" height="42"/>
+  <text class="flow-label leaf-label" x="822" y="283" text-anchor="middle">Secrets</text>
+  <text class="edge-text" x="822" y="299">clés et secrets</text>
+
+  <!-- Portée -->
+  <rect class="edge-chip" x="6" y="322" width="436" height="20"/>
+  <text class="edge-text" x="224" y="336">partagé par tous les environnements</text>
+  <rect class="edge-chip" x="450" y="322" width="436" height="20"/>
+  <text class="edge-text" x="668" y="336">même structure par environnement : un projet par application</text>
+</svg>

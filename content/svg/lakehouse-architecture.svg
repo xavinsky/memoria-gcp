@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 330" role="img" aria-label="Architecture d'un lakehouse sur Google Cloud : moteurs, catalogue, stockage et gouvernance">
+  <!-- Moteurs -->
+  <rect class="flow-box" x="20" y="20" width="180" height="50"/>
+  <text class="flow-label" x="110" y="41" text-anchor="middle">BigQuery</text>
+  <text class="edge-text" x="110" y="59">SQL, BI, ML</text>
+  <rect class="flow-box" x="220" y="20" width="180" height="50"/>
+  <text class="flow-label" x="310" y="41" text-anchor="middle">Managed Spark</text>
+  <text class="edge-text" x="310" y="59">batch, notebooks</text>
+  <rect class="flow-box" x="420" y="20" width="180" height="50"/>
+  <text class="flow-label" x="510" y="41" text-anchor="middle">Trino, Flink</text>
+  <text class="edge-text" x="510" y="59">moteurs open source</text>
+
+  <!-- Moteurs ↔ catalogue -->
+  <path class="flow-line" d="M110 70 V114 M310 70 V114 M510 70 V114"/>
+  <polygon class="flow-arrow" points="106,114 114,114 110,120"/>
+  <polygon class="flow-arrow" points="306,114 314,114 310,120"/>
+  <polygon class="flow-arrow" points="506,114 514,114 510,120"/>
+  <rect class="edge-chip" x="258" y="86" width="104" height="18"/>
+  <text class="edge-text" x="310" y="99">tables, droits</text>
+
+  <!-- Catalogue d'exécution -->
+  <rect class="flow-box q" x="20" y="120" width="580" height="56"/>
+  <text class="flow-label q-label" x="310" y="143" text-anchor="middle">Catalogue d'exécution Lakehouse</text>
+  <text class="edge-text" x="310" y="163">Iceberg REST · Hive · catalogue BigQuery · credential vending</text>
+
+  <!-- Catalogue ↔ stockage -->
+  <path class="flow-line" d="M310 176 V214"/>
+  <polygon class="flow-arrow" points="306,214 314,214 310,220"/>
+  <rect class="edge-chip" x="248" y="186" width="124" height="18"/>
+  <text class="edge-text" x="310" y="199">métadonnées Iceberg</text>
+
+  <!-- Stockage et couches -->
+  <rect class="flow-box" x="20" y="220" width="580" height="96"/>
+  <text class="flow-label" x="310" y="242" text-anchor="middle">Cloud Storage : fichiers Parquet dans vos buckets</text>
+  <rect class="flow-box leaf" x="35" y="258" width="170" height="42"/>
+  <text class="flow-label leaf-label" x="120" y="284" text-anchor="middle">Bronze (brut)</text>
+  <rect class="flow-box leaf" x="225" y="258" width="170" height="42"/>
+  <text class="flow-label leaf-label" x="310" y="284" text-anchor="middle">Argent (nettoyé)</text>
+  <rect class="flow-box leaf" x="415" y="258" width="170" height="42"/>
+  <text class="flow-label leaf-label" x="500" y="284" text-anchor="middle">Or (exposé)</text>
+  <path class="flow-line" d="M205 279 H219 M395 279 H409"/>
+  <polygon class="flow-arrow" points="219,275 225,279 219,283"/>
+  <polygon class="flow-arrow" points="409,275 415,279 409,283"/>
+
+  <!-- Gouvernance -->
+  <path class="flow-line" d="M600 148 H624 M600 268 H624"/>
+  <polygon class="flow-arrow" points="624,144 630,148 624,152"/>
+  <polygon class="flow-arrow" points="624,264 630,268 624,272"/>
+  <rect class="flow-box q" x="630" y="20" width="162" height="296"/>
+  <text class="flow-label q-label" x="711" y="46" text-anchor="middle">Knowledge Catalog</text>
+  <text class="edge-text" x="711" y="84">catalogage auto</text>
+  <text class="edge-text" x="711" y="112">découverte GCS</text>
+  <text class="edge-text" x="711" y="140">lignage</text>
+  <text class="edge-text" x="711" y="168">qualité, profil</text>
+  <text class="edge-text" x="711" y="196">glossaire</text>
+  <text class="edge-text" x="711" y="224">domaines</text>
+  <text class="edge-text" x="711" y="252">produits de données</text>
+  <text class="edge-text" x="711" y="280">policy tags</text>
+</svg>
