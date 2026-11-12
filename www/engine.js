@@ -115,6 +115,9 @@ function scrollElementIntoMainRoot(target, opts){
 const PAGES = SITE.pages;
 const topTabsEl = document.getElementById("top-tabs");
 const mainRootEl = document.getElementById("main-root");
+// Une page de section générée (<id>.html) porte une version statique de son contenu, pour les
+// moteurs de recherche ; le moteur la remplace par le site complet.
+mainRootEl.textContent = "";
 const idToPage = {};
 const firstIdForPage = {};
 const lastIdForPage = {};
@@ -357,8 +360,11 @@ document.addEventListener("click", e => {
   e.preventDefault();
   go(decodeURIComponent(a.getAttribute("href").slice(1)));
 });
-window.addEventListener("hashchange", () => route(decodeURIComponent(location.hash.slice(1))));
-route(decodeURIComponent(location.hash.slice(1)));
+// Sans hash, une page de section générée s'ouvre sur sa section (data-route sur <html>)
+const defaultRoute = document.documentElement.dataset.route || "";
+function hashRoute(){ return decodeURIComponent(location.hash.slice(1)) || defaultRoute; }
+window.addEventListener("hashchange", () => route(hashRoute()));
+route(hashRoute());
 
 /* ---------- Recherche ---------- */
 // Index construit au chargement à partir du contenu déjà rendu. Le texte est normalisé caractère

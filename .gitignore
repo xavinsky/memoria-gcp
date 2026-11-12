@@ -1,2 +1,5 @@
 www/data/
 __pycache__/
+www/*.html
+!www/index.html
+www/sitemap.xml

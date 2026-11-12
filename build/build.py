@@ -25,6 +25,10 @@ marqueurs `[!SOMMEIL]` (projet libre en sommeil), `[!PREVERSION]` (fonction en p
 `[!DECONSEILLE]` (hors pratique standard ou pérennité incertaine) : badge avec infobulle à l'endroit du
 marqueur ; en tête d'une puce ou d'une ligne de tableau, l'élément entier est grisé.
 
+Pour le référencement, le build produit aussi, à partir de www/index.html pris pour gabarit, une
+page par section et une pour le lexique (www/<id>.html : titre, description, URL canonique, Open
+Graph, contenu statique de la section) et www/sitemap.xml. Ces fichiers ne sont pas versionnés.
+
 Usage : python3 build/build.py
 """
 
@@ -52,6 +56,13 @@ ROOT = Path(__file__).resolve().parent.parent
 CONTENT = ROOT / "content"
 OUTPUT = ROOT / "www" / "data" / "content.js"
 ICONS = ROOT / "www" / "icons"
+WWW = ROOT / "www"
+SITE_URL = "https://tekio.org/memoria-gcp/"
+SITE_NAME = "MemorIA GCP"
+GENERATED_MARK = '<meta name="generator" content="memoria-gcp build/build.py">'
+SEO_BLOCK_RE = re.compile(r"<!-- seo -->.*?<!-- /seo -->", re.S)
+RESERVED_PAGES = {"index", "engine", "style", "sitemap"}
+DESCRIPTION_MAX = 160
 
 STATUS_MARKERS = {
     "SOMMEIL": ("dormant", "🧊", "Projet en sommeil : dépôt non archivé, sans développement actif depuis plus "
@@ -310,6 +321,7 @@ def load_sections(site, renderer):
                     body += "\n\n## Documentation\n\n" + "".join(
                         f"- [{label}]({url})\n" for label, url in meta["docs"].items())
                 body_html, anchors = renderer.render(body, path, sec_id, syntax)
+                description = describe(body_html)
                 if meta.get("schema"):
                     for node in meta["schema"].get("nodes", {}).values():
                         if node.get("icon") and not (ICONS / f"{node['icon']}.svg").is_file():
@@ -338,6 +350,7 @@ def load_sections(site, renderer):
                     "html": body_html,
                     "anchors": anchors,
                     "source": str(path.relative_to(ROOT)),
+                    "description": description,
                 })
             unknown = {p.name for p in page_dir.glob("*/") if p.is_dir()} - set(page["groups"])
             if unknown:
@@ -404,6 +417,120 @@ def last_updated():
     return out or datetime.date.today().strftime("%d/%m/%Y")
 
 
+def describe(body_html):
+    """Texte du premier paragraphe, sans balises, coupé à DESCRIPTION_MAX caractères."""
+    m = re.search(r"<p>(.*?)</p>", body_html, re.S)
+    if not m:
+        return ""
+    text = html.unescape(re.sub(r"<[^>]+>", "", m.group(1)))
+    text = re.sub(r"\s+", " ", text).strip()
+    if len(text) <= DESCRIPTION_MAX:
+        return text
+    head = text[:DESCRIPTION_MAX]
+    sentence = head.rfind(". ")
+    if sentence >= DESCRIPTION_MAX // 2:
+        return head[:sentence + 1]
+    cut = head[:DESCRIPTION_MAX - 1].rsplit(" ", 1)[0].rstrip(" ,;:.(")
+    return cut + "…"
+
+
+def content_dates():
+    """Date du dernier commit de chaque fichier de content/ (AAAA-MM-JJ), d'un seul git log."""
+    try:
+        out = subprocess.run(
+            ["git", "log", "--format=@%cs", "--name-only", "--", "content"],
+            cwd=ROOT, capture_output=True, text=True, check=True,
+        ).stdout
+    except (OSError, subprocess.CalledProcessError):
+        return {}
+    dates, current = {}, None
+    for line in out.splitlines():
+        if line.startswith("@"):
+            current = line[1:]
+        elif line.strip():
+            dates.setdefault(line.strip(), current)
+    return dates
+
+
+def seo_head(title, description, url):
+    title, description, url = (html.escape(v, quote=False).replace('"', "&quot;")
+                               for v in (title, description, url))
+    return (
+        f"{GENERATED_MARK}\n"
+        f"<title>{title}</title>\n"
+        f'<meta name="description" content="{description}">\n'
+        f'<link rel="canonical" href="{url}">\n'
+        '<meta property="og:type" content="article">\n'
+        '<meta property="og:site_name" content="tekio.org">\n'
+        f'<meta property="og:title" content="{title}">\n'
+        f'<meta property="og:description" content="{description}">\n'
+        f'<meta property="og:url" content="{url}">\n'
+        '<meta property="og:locale" content="fr_FR">\n'
+        '<meta name="twitter:card" content="summary">'
+    )
+
+
+def write_pages(site, sections, lexique):
+    """Une page HTML par section et pour le lexique, puis sitemap.xml. Chaque page est le site
+    complet (gabarit www/index.html) ouvert sur sa section, avec ses propres métadonnées et le
+    contenu de la section en HTML statique, lisible sans JavaScript."""
+    template = (WWW / "index.html").read_text(encoding="utf-8")
+    if not SEO_BLOCK_RE.search(template) or '<main id="main-root"></main>' not in template:
+        raise BuildError("www/index.html : bloc <!-- seo --> ou <main id=\"main-root\"> introuvable")
+    for old in WWW.glob("*.html"):
+        if old.name != "index.html" and GENERATED_MARK in old.read_text(encoding="utf-8"):
+            old.unlink()
+
+    dates = content_dates()
+    today = datetime.date.today().isoformat()
+    labels = {p["key"]: p["label"] for p in site["pages"]}
+    pages = []
+    for sec in sections:
+        label = labels[sec["page"]]
+        if sec["page"] == "produits":
+            title = f"{sec['title']} : fiche produit Google Cloud | {SITE_NAME}"
+        else:
+            title = f"{sec['title']} : {label} sur Google Cloud | {SITE_NAME}"
+        description = sec["description"] or f"{sec['title']} : {label} sur Google Cloud, dans l'aide-mémoire {SITE_NAME}."
+        icon = f'<img class="panel-icon" src="{sec["icon"]}" alt="">' if sec["icon"] else ""
+        body = (
+            f'<section class="panel active"><div class="panel-header">{icon}<div class="panel-titles">'
+            f'<h1>{html.escape(sec["title"])}</h1></div></div><div class="md">{sec["html"]}</div></section>'
+        )
+        pages.append((sec["id"], title, description, body, dates.get(sec["source"], today)))
+    if lexique and "lexique" in labels:
+        entries = "".join(
+            f'<div class="lex-entry" id="{e["id"]}"><div class="lex-term">{html.escape(e["t"])}</div>'
+            f'<div class="lex-def">{e["html"]}</div></div>' for e in lexique)
+        body = f'<div class="page-main active"><div class="page-header"><h1>Lexique</h1></div>{entries}</div>'
+        pages.append(("lexique", f"Lexique Google Cloud : termes, sigles et anciens noms | {SITE_NAME}",
+                      f"Lexique Google Cloud en français : {len(lexique)} termes, sigles et anciens noms de "
+                      "produits, chacun relié à la section qui le détaille.",
+                      body, dates.get("content/lexique.md", today)))
+
+    titles = [p[1] for p in pages]
+    for page_id, title, description, body, _ in pages:
+        if page_id in RESERVED_PAGES:
+            raise BuildError(f"id `{page_id}` réservé : il donnerait la page www/{page_id}.html")
+        if titles.count(title) > 1:
+            raise BuildError(f"titre de page en double : {title}")
+        out = SEO_BLOCK_RE.sub(lambda _: seo_head(title, description, f"{SITE_URL}{page_id}.html"), template)
+        out = out.replace('<html lang="fr">', f'<html lang="fr" data-route="{page_id}">', 1)
+        out = out.replace('<main id="main-root"></main>', f'<main id="main-root">{body}</main>', 1)
+        (WWW / f"{page_id}.html").write_text(out, encoding="utf-8")
+
+    urls = [(SITE_URL, max(dates.values(), default=today))]
+    urls += [(f"{SITE_URL}{p[0]}.html", p[4]) for p in pages]
+    (WWW / "sitemap.xml").write_text(
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        + "".join(f"  <url><loc>{html.escape(u)}</loc><lastmod>{d}</lastmod></url>\n" for u, d in urls)
+        + "</urlset>\n",
+        encoding="utf-8",
+    )
+    return len(pages)
+
+
 def main():
     site = load_site()
     renderer = Renderer()
@@ -412,6 +539,9 @@ def main():
     check_ids_and_links(site, sections, lexique, renderer)
     for sec in sections:
         del sec["anchors"]
+    page_count = write_pages(site, sections, lexique)
+    for sec in sections:
+        del sec["description"]
     data = {
         "title": site["title"],
         "updated": last_updated(),
@@ -426,6 +556,7 @@ def main():
         encoding="utf-8",
     )
     print(f"{OUTPUT.relative_to(ROOT)} : {len(sections)} sections, {len(lexique)} termes")
+    print(f"www/*.html : {page_count} pages de section et lexique, www/sitemap.xml : {page_count + 1} URL")
 
 
 if __name__ == "__main__":

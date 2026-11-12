@@ -20,6 +20,8 @@ pip install -r requirements.txt
 python3 build/build.py      # content/ → www/data/content.js
 ```
 
+Le build produit aussi, pour le référencement, une page `www/<id>.html` par section et pour le lexique (le site complet ouvert sur cette section, avec ses métadonnées et son contenu en HTML statique) et `www/sitemap.xml`, publié sur https://tekio.org/memoria-gcp/sitemap.xml.
+
 Ouvrir ensuite `www/index.html` dans un navigateur : le site fonctionne sans serveur. Le workflow `.github/workflows/pages.yml` lance le build et publie `www/` sur GitHub Pages à chaque push sur `main`.
 
 | Élément | Rôle |
