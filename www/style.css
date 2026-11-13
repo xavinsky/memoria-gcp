@@ -304,6 +304,15 @@ mark.search-mark.current{background:var(--sec4); box-shadow:0 0 0 2px color-mix(
 #zoom-level{font-family:var(--font-mono); font-size:11px; color:var(--sidebar-text); min-width:34px; text-align:center;}
 #scrollbar-toggle{display:flex; align-items:center; justify-content:center; margin-left:auto;}
 #scrollbar-toggle svg{width:18px; height:18px; display:block; overflow:visible;}
+/* ---------- Menu latéral masquable : #sidebar-toggle (pied du menu) le masque, #sidebar-show (à gauche
+   du titre) le réaffiche ; classe sur <html> posée dès le chargement par index.html ---------- */
+#sidebar-toggle{display:flex; align-items:center; justify-content:center;}
+#sidebar-toggle svg{width:18px; height:18px; display:block;}
+#sidebar-show{display:none; align-items:center; justify-content:center; width:28px; height:28px; padding:0;
+  border:none; border-radius:4px; background:transparent; color:rgba(255,255,255,0.85); cursor:pointer; flex:none;}
+#sidebar-show:hover{background:var(--sidebar-hover); color:#fff;}
+html.sidebar-cachee #sidebar-show{display:flex;}
+html.sidebar-cachee #sidebar{display:none;}
 
 .page-navbody{display:none; padding-bottom:8px;}
 .page-navbody.active{display:block;}

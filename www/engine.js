@@ -65,6 +65,24 @@ function applyScrollbarPref(visible){
 scrollbarToggleBtn.addEventListener("click", () => applyScrollbarPref(!sidebarScrollEl.classList.contains("scrollbar-visible")));
 applyScrollbarPref(store.get(SCROLLBAR_KEY) === "1");
 
+/* Menu latéral masquable (classe sur <html>, posée dès le chargement par index.html) : bouton en bas du menu pour
+   le masquer, icône en haut à gauche pour le réafficher, touche M pour basculer. */
+const SIDEBAR_KEY = "memogcp-sidebar-cachee";
+function applySidebarPref(cachee){
+  document.documentElement.classList.toggle("sidebar-cachee", cachee);
+  store.set(SIDEBAR_KEY, cachee ? "1" : "0");
+}
+document.getElementById("sidebar-toggle").addEventListener("click", () => applySidebarPref(true));
+document.getElementById("sidebar-show").addEventListener("click", () => applySidebarPref(false));
+document.addEventListener("keydown", e => {
+  const cible = e.target;
+  if (e.key.toLowerCase() !== "m" || e.ctrlKey || e.metaKey || e.altKey) return;
+  if (cible.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(cible.tagName)) return;
+  e.preventDefault();
+  applySidebarPref(!document.documentElement.classList.contains("sidebar-cachee"));
+});
+applySidebarPref(store.get(SIDEBAR_KEY) === "1");
+
 document.getElementById("last-updated").textContent = "Dernière mise à jour : " + SITE.updated;
 
 /* ---------- Helpers ---------- */
