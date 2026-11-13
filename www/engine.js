@@ -154,7 +154,8 @@ PAGES.forEach(page => {
   main.id = "mainpage-" + page.key;
   mainRootEl.appendChild(main);
 
-  if (page.type === "lexique") buildLexiquePage(page, nav, main);
+  if (page.type === "accueil") buildAccueilPage(page, nav, main);
+  else if (page.type === "lexique") buildLexiquePage(page, nav, main);
   else if (page.type === "generateurs") buildGeneratorsPage(page, nav, main);
   else buildSectionsPage(page, nav, main);
 });
@@ -257,6 +258,29 @@ function buildSectionsPage(page, nav, main){
   });
 }
 
+// Page d'accueil : présentation du site (content/accueil.md) ; le menu latéral liste les autres
+// projets IA de tekio.org (projets de site.yml)
+function buildAccueilPage(page, nav, main){
+  const group = makeNavBox(nav, "group", "Autres projets IA");
+  group.box.classList.remove("collapsed");
+  (SITE.projets || []).forEach(p => {
+    const a = el("a", "nav-item nav-projet");
+    a.href = p.url;
+    a.target = "_blank";
+    a.rel = "noopener";
+    a.append(el("span", "nav-projet-nom", p.nom + " ↗"), el("span", "nav-projet-desc", p.desc));
+    group.items.appendChild(a);
+  });
+  if (!SITE.accueil) return;
+  const header = el("div", "page-header");
+  header.appendChild(el("h2", "", SITE.accueil.title));
+  main.appendChild(header);
+  const body = el("div", "md");
+  body.innerHTML = SITE.accueil.html;
+  groupIntoCards(body);
+  main.appendChild(body);
+}
+
 function buildLexiquePage(page, nav, main){
   const header = el("div", "page-header");
   header.appendChild(el("h2", "", page.label));
@@ -320,6 +344,7 @@ function showPage(key){
   document.querySelectorAll(".top-tab").forEach(t => t.classList.toggle("active", t.dataset.page === key));
   document.querySelectorAll(".page-navbody").forEach(n => n.classList.toggle("active", n.id === "navbody-" + key));
   document.querySelectorAll(".page-main").forEach(m => m.classList.toggle("active", m.id === "mainpage-" + key));
+  mainRootEl.scrollTo(0, 0);
 }
 
 function showSection(id){

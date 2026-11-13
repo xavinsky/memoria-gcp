@@ -1,10 +1,14 @@
 # Menu principal : ordre des onglets et, pour chaque onglet, ses groupes (= sous-dossiers de
 # content/<key>/) dans l'ordre d'affichage du menu latéral.
-# type : sections (défaut, contenu Markdown), lexique, generateurs.
+# type : sections (défaut, contenu Markdown), accueil (content/accueil.md), lexique, generateurs.
 
 title: Memoria GCP
 
 pages:
+  - key: accueil
+    label: Accueil
+    type: accueil
+
   - key: architectures-data
     label: Architectures Data
     groups:
@@ -65,3 +69,15 @@ pages:
     label: Refs
     groups:
       docs: Documentation officielle
+
+# Autres projets IA de tekio.org, listés dans le menu latéral de l'Accueil.
+projets:
+  - nom: MemorIA
+    url: https://tekio.org/memoria/
+    desc: Aide-mémoire Machine Learning, Deep Learning et MLOps — concepts, maths, syntaxes Python.
+  - nom: ExemplIA
+    url: https://tekio.org/exemplia/
+    desc: Usage des LLM en entreprise, sur modèles locaux, avec garde, évaluation et observabilité.
+  - nom: AmeliorIA
+    url: https://tekio.org/amelioria/
+    desc: Améliorer un modèle existant sans réentraîner de zéro — 20 méthodes, exemples mesurés.

@@ -5,7 +5,10 @@ Le site (www/index.html) reste un fichier statique qui s'ouvre en file:// : les 
 chargées par <script src>, sous la forme `const SITE = {...}`, et non par fetch.
 
 Structure lue :
-  content/site.yml                        pages du menu, libellés des groupes
+  content/site.yml                        pages du menu, libellés des groupes ; une page de type
+                                          `accueil` affiche content/accueil.md ;
+                                          projets : autres projets IA, menu latéral de l'accueil
+  content/accueil.md                      page d'accueil (front matter : title)
   content/<page>/<groupe>/<NN>-<slug>.md  une section ; le dossier donne le groupe, le nom de
                                           fichier l'ordre et l'id par défaut
   content/lexique.md                      un terme par titre `## Terme`
@@ -389,10 +392,25 @@ def load_lexique(renderer):
     return sorted(terms, key=lambda e: slugify(e["t"]))
 
 
-def check_ids_and_links(site, sections, lexique, renderer):
+def load_accueil(site, renderer):
+    """Page d'accueil (content/accueil.md), si site.yml déclare une page de type `accueil`."""
+    pages = [p for p in site["pages"] if p["type"] == "accueil"]
+    if not pages:
+        return None
+    path = CONTENT / "accueil.md"
+    if not path.is_file():
+        raise BuildError(f"{path}: fichier absent, requis par la page `{pages[0]['key']}` de site.yml")
+    meta, body = split_front_matter(path.read_text(encoding="utf-8"), path)
+    body_html, anchors = renderer.render(body, path, pages[0]["key"])
+    return {"title": meta.get("title", pages[0]["label"]), "html": body_html, "anchors": anchors}
+
+
+def check_ids_and_links(site, sections, lexique, accueil, renderer):
     known = {}
     for page in site["pages"]:
         known[page["key"]] = "page"
+    for anchor in accueil["anchors"] if accueil else []:
+        known[anchor] = "accueil"
     for sec in sections:
         for anchor in [sec["id"], *sec["anchors"]]:
             if anchor in known:
@@ -536,7 +554,10 @@ def main():
     renderer = Renderer()
     sections = load_sections(site, renderer)
     lexique = load_lexique(renderer)
-    check_ids_and_links(site, sections, lexique, renderer)
+    accueil = load_accueil(site, renderer)
+    check_ids_and_links(site, sections, lexique, accueil, renderer)
+    if accueil:
+        del accueil["anchors"]
     for sec in sections:
         del sec["anchors"]
     page_count = write_pages(site, sections, lexique)
@@ -548,6 +569,8 @@ def main():
         "pages": site["pages"],
         "sections": sections,
         "lexique": lexique,
+        "accueil": accueil,
+        "projets": site.get("projets", []),
     }
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT.write_text(
