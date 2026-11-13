@@ -2,6 +2,8 @@
 
 Aide-mémoire Google Cloud pour la data, l'IA et le DevOps : un site statique, en français, qui rassemble des architectures de référence, des syntaxes, un catalogue de produits et un lexique.
 
+Le site : **https://tekio.org/memoria-gcp/**
+
 | Onglet | Contenu |
 |---|---|
 | Accueil | Objectif du site (utiliser l'IA avec les produits Google Cloud), plan des onglets, parcours de lecture |
